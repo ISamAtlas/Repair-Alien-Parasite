@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx1xlks5wgsr"]
+
+[ext_resource type="Script" uid="uid://fx5onf22g8qe" path="res://scripts/ui/buttons/generic_scene_change.gd" id="1_oap8i"]
+
+[node name="credits" type="Node2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 301.0
+offset_right = 576.0
+offset_bottom = 474.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="back" type="Button" parent="CenterContainer"]
+layout_mode = 2
+text = "Back to Main Menu"
+script = ExtResource("1_oap8i")
+target_scene_path = "res://scenes/ui/main_menu.tscn"
+
+[node name="TextEdit" type="Label" parent="."]
+offset_left = 201.0
+offset_top = 75.0
+offset_right = 968.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 20
+text = "these aree the credits :3"

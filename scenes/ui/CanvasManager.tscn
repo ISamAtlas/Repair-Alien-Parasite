@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfog5f2mss00f"]
+
+[ext_resource type="Script" uid="uid://dghfqul7u2i7y" path="res://scripts/ui/pause_menu/main.gd" id="1_sgvfw"]
+[ext_resource type="Script" uid="uid://bvwqx3iuqmbfp" path="res://scripts/ui/options/h_slider.gd" id="2_qtnq8"]
+
+[node name="CanvasManager" type="CanvasLayer"]
+process_mode = 3
+
+[node name="pause_handler" type="CenterContainer" parent="."]
+process_mode = 3
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_sgvfw")
+
+[node name="Pause Menu" type="PanelContainer" parent="pause_handler"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_handler/Pause Menu"]
+custom_minimum_size = Vector2(250, 300)
+layout_mode = 2
+theme_override_constants/separation = 61
+alignment = 1
+
+[node name="resume" type="Button" parent="pause_handler/Pause Menu/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="options" type="Button" parent="pause_handler/Pause Menu/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Options" type="Panel" parent="pause_handler"]
+visible = false
+custom_minimum_size = Vector2(550, 450)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_handler/Options"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="pause_handler/Options/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="pause_handler/Options/VBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+editable = false
+
+[node name="master" type="HSlider" parent="pause_handler/Options/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+script = ExtResource("2_qtnq8")
+bus_name = "Master"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_handler/Options/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="pause_handler/Options/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Music
+"
+editable = false
+
+[node name="music" type="HSlider" parent="pause_handler/Options/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_qtnq8")
+bus_name = "music"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="pause_handler/Options/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="pause_handler/Options/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Sound Effects
+
+"
+editable = false
+
+[node name="sfx" type="HSlider" parent="pause_handler/Options/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+script = ExtResource("2_qtnq8")
+bus_name = "SFX"
+
+[node name="resume" type="Button" parent="pause_handler/Options/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[connection signal="pressed" from="pause_handler/Pause Menu/VBoxContainer/resume" to="pause_handler" method="_on_resume_pressed"]
+[connection signal="pressed" from="pause_handler/Pause Menu/VBoxContainer/options" to="pause_handler" method="_on_options_pressed"]
+[connection signal="pressed" from="pause_handler/Options/VBoxContainer/resume" to="pause_handler" method="_on_resume_pressed"]

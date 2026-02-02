@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://2pn7btfqlf57"]
+
+[ext_resource type="Script" uid="uid://fx5onf22g8qe" path="res://scripts/ui/buttons/generic_scene_change.gd" id="1_lr2b1"]
+[ext_resource type="Script" uid="uid://bvwqx3iuqmbfp" path="res://scripts/ui/options/h_slider.gd" id="2_l4ffv"]
+
+[node name="Options" type="Node2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 301.0
+offset_right = 576.0
+offset_bottom = 474.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="back" type="Button" parent="CenterContainer"]
+layout_mode = 2
+text = "Back to Main Menu"
+script = ExtResource("1_lr2b1")
+target_scene_path = "res://scenes/ui/main_menu.tscn"
+
+[node name="sfx" type="HSlider" parent="."]
+offset_left = 59.0
+offset_top = 234.0
+offset_right = 547.0
+offset_bottom = 295.0
+script = ExtResource("2_l4ffv")
+bus_name = "SFX"
+
+[node name="music" type="HSlider" parent="."]
+offset_left = 64.0
+offset_top = 370.0
+offset_right = 552.0
+offset_bottom = 431.0
+script = ExtResource("2_l4ffv")
+bus_name = "music"
+
+[node name="master" type="HSlider" parent="."]
+offset_left = 52.0
+offset_top = 82.0
+offset_right = 540.0
+offset_bottom = 143.0
+script = ExtResource("2_l4ffv")
+bus_name = "Master"
