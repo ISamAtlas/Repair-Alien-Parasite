@@ -4,19 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://dfc0mqaabrlt4" path="res://icon.svg" id="2_yewv4"]
 [ext_resource type="Script" uid="uid://bqiis0cj721ms" path="res://scripts/characters/procedural_legs.gd" id="3_76oj4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yewv4"]
-radius = 35.69314
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76oj4"]
+size = Vector2(64, 18)
 
 [node name="Player" type="CharacterBody2D" unique_id=623290912]
 collision_mask = 2
 script = ExtResource("1_rp718")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=102617290]
+position = Vector2(0, -31)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yewv4")
+offset = Vector2(0, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247044228]
-shape = SubResource("CircleShape2D_yewv4")
+position = Vector2(-2, -8)
+shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
 position = Vector2(2, -14)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dlmbyfn0jxty3" path="res://scenes/characters/player.tscn" id="2_ad6u8"]
 [ext_resource type="Texture2D" uid="uid://b52w1g3ga55yk" path="res://assets/tilesets/stage1-tileset.png" id="2_jda6d"]
-[ext_resource type="Texture2D" uid="uid://bj28v1uu4aqfr" path="res://assets/tilesets/stage1-background.png" id="3_jda6d"]
+[ext_resource type="Texture2D" uid="uid://bj28v1uu4aqfr" path="res://assets/tilesets/stage1-details.png" id="3_jda6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qx34v"]
 texture = ExtResource("2_jda6d")
@@ -13,6 +13,7 @@ texture_region_size = Vector2i(32, 32)
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
 0:3/0 = 0
+0:3/0/y_sort_origin = 23
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, 16, 8, 16, 16, -16, 16)
 0:4/0 = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -32,7 +33,7 @@ texture = ExtResource("3_jda6d")
 texture_region_size = Vector2i(32, 32)
 0:0/animation_columns = 2
 0:0/animation_separation = Vector2i(2, 0)
-0:0/animation_speed = 10.0
+0:0/animation_speed = 5.0
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/0 = 0
@@ -71,3 +72,13 @@ z_index = -1
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD9////AAAAAAEAAAD+////AAABAAEAAAD/////AAABAAEAAAAAAP//AAACAAEAAAABAP7/AAADAAIAAAD+//7/AAACAAIAAAAAAAAAAAACAAIAAAD9/wAAAAABAAIAAAAAAP7/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_y4tkw")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="y-sort" unique_id=2068152376]
+
+[node name="ColorRect" type="ColorRect" parent="y-sort" unique_id=105681851]
+z_index = -2
+offset_left = -322.0
+offset_top = -469.0
+offset_right = 646.0
+offset_bottom = 499.0
+color = Color(0.15294118, 0.15294118, 0.26666668, 1)
