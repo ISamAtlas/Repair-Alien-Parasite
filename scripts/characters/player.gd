@@ -2,16 +2,9 @@ extends CharacterBody2D
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
-@export var collisionRadius := 4.12 #to have dynamic collision easily controllable by levels
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
-func _ready() -> void:
-	SignalManager.connect("_new_collision", _on_new_collision)
-
-func _on_new_collision() -> void:
-	collision.shape.radius = collisionRadius
 
 func _physics_process(delta: float) -> void:
 	print(position)
