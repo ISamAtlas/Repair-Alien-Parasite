@@ -12,7 +12,7 @@ collision_mask = 2
 script = ExtResource("1_rp718")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=102617290]
-position = Vector2(0, -31)
+position = Vector2(0, -45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yewv4")
 offset = Vector2(0, 62)
@@ -23,7 +23,7 @@ shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
 position = Vector2(2, -14)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.75, 1.75)
 
 [node name="legs" type="Node2D" parent="." unique_id=1923044990]
 position = Vector2(-17, -4)

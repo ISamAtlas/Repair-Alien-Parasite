@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dlmbyfn0jxty3" path="res://scenes/characters/player.tscn" id="2_ad6u8"]
 [ext_resource type="Texture2D" uid="uid://b52w1g3ga55yk" path="res://assets/tilesets/stage1-tileset.png" id="2_jda6d"]
 [ext_resource type="Texture2D" uid="uid://bj28v1uu4aqfr" path="res://assets/tilesets/stage1-details.png" id="3_jda6d"]
+[ext_resource type="Texture2D" uid="uid://dxo6ahfto86yh" path="res://assets/tilesets/stage1-background.png" id="4_qx34v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qx34v"]
 texture = ExtResource("2_jda6d")
@@ -33,7 +34,7 @@ texture = ExtResource("3_jda6d")
 texture_region_size = Vector2i(32, 32)
 0:0/animation_columns = 2
 0:0/animation_separation = Vector2i(2, 0)
-0:0/animation_speed = 5.0
+0:0/animation_speed = 7.0
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/0 = 0
@@ -54,6 +55,53 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_a0w7u")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4tkw"]
+texture = ExtResource("4_qx34v")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/probability = 0.2
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/probability = 0.2
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0/terrains_peering_bit/left_side = 0
+0:1/0/terrains_peering_bit/top_left_corner = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/probability = 0.9
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/bottom_right_corner = 0
+0:2/0/terrains_peering_bit/bottom_side = 0
+0:2/0/terrains_peering_bit/bottom_left_corner = 0
+0:2/0/terrains_peering_bit/left_side = 0
+0:2/0/terrains_peering_bit/top_left_corner = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_c1obi"]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_y4tkw")
+
 [node name="Level1" type="Node2D" unique_id=486997646]
 
 [node name="y-sort" type="Node2D" parent="." unique_id=230068205]
@@ -62,23 +110,21 @@ y_sort_enabled = true
 [node name="Player" parent="y-sort" unique_id=623290912 instance=ExtResource("2_ad6u8")]
 position = Vector2(-37, -79)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="y-sort" unique_id=962616548]
+[node name="limits" type="TileMapLayer" parent="y-sort" unique_id=962616548]
+y_sort_enabled = true
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAD+//3/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAD+//z/AAAAAAAAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPv/AAAAAAAAAAD///v/AAAAAAAAAAD+//v/AAAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAABAPv/AAAAAAAAAAABAP3/AAAAAAEAAAD9//3/AAAAAAEAAAD9//7/AAAAAAIAAAABAP7/AAAAAAIAAAD9/wAAAAAAAAMAAAD+/wAAAAAAAAMAAAD//wAAAAAAAAMAAAAAAAAAAAAAAAMAAAAAAAEAAAAAAAQAAAD//wEAAAAAAAQAAAD+/wEAAAAAAAQAAAD9/wEAAAAAAAQAAAD9/wIAAAAAAAUAAAD+/wIAAAAAAAUAAAD//wIAAAAAAAUAAAAAAAIAAAAAAAUAAAABAP//AAAAAAMAAAABAAAAAAAAAAQAAAABAAEAAAAAAAUAAAABAAIAAAAAAAYAAAA=")
+tile_map_data = PackedByteArray("AAD9//7/AAAAAAIAAAABAP7/AAAAAAIAAAD9//3/AAAAAAEAAAD+//3/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAABAP3/AAAAAAEAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAABAAIAAAAAAAYAAAAAAAIAAAAAAAUAAAD//wIAAAAAAAUAAAD+/wIAAAAAAAUAAAD9/wIAAAAAAAUAAAD9/wEAAAAAAAQAAAD+/wEAAAAAAAQAAAD//wEAAAAAAAQAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAQAAAABAP//AAAAAAMAAAD9/wAAAAAAAAMAAAD+/wAAAAAAAAMAAAD//wAAAAAAAAMAAAABAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAA=")
 tile_set = SubResource("TileSet_a0w7u")
+y_sort_origin = -40
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="y-sort" unique_id=43229283]
+[node name="details" type="TileMapLayer" parent="y-sort" unique_id=43229283]
 z_index = -1
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD9////AAAAAAEAAAD+////AAABAAEAAAD/////AAABAAEAAAAAAP//AAACAAEAAAABAP7/AAADAAIAAAD+//7/AAACAAIAAAAAAAAAAAACAAIAAAD9/wAAAAABAAIAAAAAAP7/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_y4tkw")
 
-[node name="TileMapLayer3" type="TileMapLayer" parent="y-sort" unique_id=2068152376]
-
-[node name="ColorRect" type="ColorRect" parent="y-sort" unique_id=105681851]
-z_index = -2
-offset_left = -322.0
-offset_top = -469.0
-offset_right = 646.0
-offset_bottom = 499.0
-color = Color(0.15294118, 0.15294118, 0.26666668, 1)
+[node name="background" type="TileMapLayer" parent="y-sort" unique_id=2068152376]
+z_index = -10
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD6//z/AAAAAAAAAAD7//z/AAAAAAAAAAD8//z/AAAAAAIAAAD9//z/AAAAAAEAAAD+//z/AAAAAAIAAAD///z/AAAAAAIAAAAAAPz/AAAAAAIAAAABAPz/AAAAAAIAAAACAPz/AAAAAAIAAAADAPz/AAAAAAIAAAADAP3/AAAAAAEAAAACAP3/AAAAAAEAAAABAP3/AAAAAAIAAAAAAP3/AAAAAAIAAAD///3/AAAAAAEAAAD+//3/AAAAAAIAAAD9//3/AAAAAAAAAAD8//3/AAAAAAEAAAD7//3/AAAAAAIAAAD6//3/AAAAAAEAAAD6//7/AAAAAAEAAAD7//7/AAAAAAIAAAD8//7/AAAAAAIAAAD9//7/AAAAAAIAAAD+//7/AAAAAAIAAAD///7/AAAAAAEAAAAAAP7/AAAAAAIAAAABAP7/AAAAAAIAAAACAP7/AAAAAAEAAAADAP7/AAAAAAIAAAADAP//AAAAAAAAAAACAP//AAAAAAIAAAABAP//AAAAAAIAAAAAAP//AAAAAAIAAAD/////AAAAAAIAAAD+////AAAAAAIAAAD9////AAAAAAIAAAD8////AAAAAAIAAAD7////AAAAAAIAAAD6////AAAAAAAAAAD6/wAAAAAAAAIAAAD7/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD9/wAAAAAAAAIAAAD+/wAAAAAAAAIAAAD//wAAAAAAAAEAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAIAAAD6/wEAAAAAAAEAAAD7/wEAAAAAAAEAAAD8/wEAAAAAAAAAAAD9/wEAAAAAAAEAAAD+/wEAAAAAAAEAAAD//wEAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAD6//v/AAAAAAAAAAD7//v/AAAAAAAAAAD8//v/AAAAAAIAAAD9//v/AAAAAAIAAAD+//v/AAAAAAIAAAD///v/AAAAAAIAAAAAAPv/AAAAAAIAAAABAPv/AAAAAAEAAAACAPv/AAAAAAEAAAADAPv/AAAAAAAAAAD4////AAAAAAEAAAD4//7/AAAAAAEAAAD5//3/AAAAAAIAAAD5////AAAAAAEAAAD3////AAAAAAIAAAD3//7/AAAAAAIAAAD3//3/AAAAAAIAAAD4//3/AAAAAAEAAAD5//7/AAAAAAIAAAD5//z/AAAAAAEAAAD4//z/AAAAAAIAAAD3//z/AAAAAAAAAAD4//v/AAAAAAIAAAD5//v/AAAAAAIAAAAEAP3/AAAAAAIAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAIAAAADAAAAAAAAAAIAAAAEAP//AAAAAAIAAAACAAAAAAAAAAIAAAAGAP//AAAAAAIAAAAFAP//AAAAAAIAAAAEAP7/AAAAAAIAAAAFAPv/AAAAAAEAAAAEAPv/AAAAAAEAAAAFAAAAAAAAAAIAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAEAAAAEAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_c1obi")
