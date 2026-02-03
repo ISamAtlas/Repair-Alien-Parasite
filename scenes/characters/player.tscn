@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dlmbyfn0jxty3"]
+
+[ext_resource type="Script" uid="uid://ck8x2kfiejr1f" path="res://scripts/characters/player.gd" id="1_rp718"]
+[ext_resource type="Texture2D" uid="uid://dfc0mqaabrlt4" path="res://icon.svg" id="2_yewv4"]
+[ext_resource type="Script" uid="uid://bqiis0cj721ms" path="res://scripts/characters/procedural_legs.gd" id="3_76oj4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yewv4"]
+radius = 4.1231055
+
+[node name="Player" type="CharacterBody2D" unique_id=623290912]
+collision_mask = 2
+script = ExtResource("1_rp718")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=102617290]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_yewv4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247044228]
+shape = SubResource("CircleShape2D_yewv4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
+position = Vector2(0, -61)
+zoom = Vector2(2, 2)
+
+[node name="legs" type="Node2D" parent="." unique_id=1923044990]
+position = Vector2(-17, -4)
+
+[node name="CharacterContainer" type="Node2D" parent="legs" unique_id=231425896]
+
+[node name="body" type="Node2D" parent="legs/CharacterContainer" unique_id=611043176]
+
+[node name="Sprite2D" type="Sprite2D" parent="legs/CharacterContainer/body" unique_id=555430729]
+position = Vector2(12.000001, 12)
+scale = Vector2(0.009765626, 0.054687493)
+texture = ExtResource("2_yewv4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="legs/CharacterContainer/body" unique_id=599062063]
+position = Vector2(26.000002, 9)
+scale = Vector2(0.0097657135, 0.05419922)
+texture = ExtResource("2_yewv4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="legs/CharacterContainer/body" unique_id=1889210738]
+position = Vector2(11.000001, 5.9999995)
+rotation = 1.3677523
+scale = Vector2(0.009765626, 0.054687493)
+texture = ExtResource("2_yewv4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="legs/CharacterContainer/body" unique_id=1051150992]
+position = Vector2(22, 7)
+rotation = -1.0224558
+scale = Vector2(0.011718739, 0.056640636)
+texture = ExtResource("2_yewv4")
+offset = Vector2(0.00018310547, -2.2888184e-05)
+
+[node name="Sprite2D6" type="Sprite2D" parent="legs/CharacterContainer/body" unique_id=480922220]
+position = Vector2(8, 10)
+scale = Vector2(0.007812533, 0.0585937)
+texture = ExtResource("2_yewv4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="legs/CharacterContainer/body" unique_id=431129794]
+position = Vector2(32, 12)
+scale = Vector2(0.011718739, 0.056640644)
+texture = ExtResource("2_yewv4")
+
+[node name="bones" type="Node2D" parent="legs/CharacterContainer" unique_id=1589187651]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="legs/CharacterContainer/bones" unique_id=803245349]
+
+[node name="target" type="Marker2D" parent="legs" unique_id=1361987053]
+
+[node name="Node" type="Node" parent="legs" unique_id=1296855114]
+
+[node name="tip" type="Marker2D" parent="legs/Node" unique_id=884462845]
+script = ExtResource("3_76oj4")

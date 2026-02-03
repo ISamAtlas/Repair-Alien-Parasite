@@ -1,0 +1,81 @@
+[gd_scene format=4 uid="uid://b608wqkxkbbu8"]
+
+[ext_resource type="Texture2D" uid="uid://bvh7183kbrx0e" path="res://assets/tilesets/stage1.png" id="1_fij71"]
+[ext_resource type="PackedScene" uid="uid://dlmbyfn0jxty3" path="res://scenes/characters/player.tscn" id="2_ad6u8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ad6u8"]
+texture = ExtResource("1_fij71")
+texture_region_size = Vector2i(32, 32)
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/probability = 0.155
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, 16, 8, 16, 16, -16, 16)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 1
+0:1/0/terrains_peering_bit/left_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/probability = 0.905
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 8, -16, 8, -16, 16, 16, 16)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 1
+1:1/0/terrains_peering_bit/left_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/probability = 0.225
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, 16, 8, 16, 16, -16, 16)
+2:1/0/terrains_peering_bit/right_side = 0
+2:1/0/terrains_peering_bit/bottom_side = 1
+2:1/0/terrains_peering_bit/left_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 1
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 1
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 1
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jda6d"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "floor"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Terrain 1"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_ad6u8")
+
+[node name="Level1" type="Node2D" unique_id=486997646]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1481288046]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD/////AAACAAcAAAAAAP//AAACAAcAAAABAP//AAACAAcAAAD+////AAACAAEAAAD+/wAAAAAAAAIAAAD//wAAAAACAAIAAAABAAAAAAABAAIAAAACAP//AAACAAcAAAADAP//AAACAAcAAAAEAP//AAABAAEAAAAFAP//AAABAAEAAAAGAP//AAABAAEAAAAHAP//AAACAAEAAAAIAP//AAABAAEAAAAJAP//AAABAAEAAAD8////AAABAAEAAAD7////AAABAAEAAAD6////AAABAAEAAAD5////AAAAAAEAAAD4////AAABAAEAAAD3////AAABAAEAAAD2////AAACAAEAAAD9////AAABAAEAAAD+/wEAAAACAAUAAAD//wEAAAACAAUAAAAAAAEAAAABAAUAAAABAAEAAAABAAUAAAADAAEAAAAAAAUAAAACAAEAAAAAAAUAAAAEAAEAAAAAAAUAAAAFAAEAAAABAAQAAAAGAAEAAAABAAMAAAD6/wEAAAABAAUAAAD7/wEAAAABAAUAAAD8/wAAAAAAAAIAAAD9/wAAAAABAAIAAAACAAAAAAACAAIAAAADAAAAAAACAAIAAAAEAAAAAAAAAAIAAAAFAAAAAAACAAIAAAAGAAAAAAACAAIAAAAHAAAAAAAAAAIAAAAIAAAAAAACAAIAAAAKAAAAAAAAAAIAAAAJAAAAAAABAAIAAAALAAAAAAABAAIAAAALAP//AAACAAIAAAD7/wAAAAAAAAIAAAD6/wAAAAABAAIAAAD5/wAAAAABAAIAAAD4/wAAAAAAAAIAAAD3/wAAAAAAAAIAAAD2/wAAAAABAAIAAAD8/wEAAAABAAUAAAD9/wEAAAABAAUAAAD//wIAAAABAAYAAAAAAAIAAAACAAYAAAABAAIAAAACAAcAAAACAAIAAAACAAcAAAD+/wIAAAABAAYAAAD9/wIAAAABAAYAAAD8/wIAAAABAAYAAAD8/wMAAAACAAcAAAD9/wMAAAAAAAcAAAD+/wMAAAACAAcAAAD//wMAAAACAAcAAAAAAAMAAAAAAAcAAAABAAMAAAACAAcAAAACAAMAAAACAAcAAAD2/wEAAAAAAAUAAAD3/wEAAAAAAAUAAAD4/wEAAAAAAAUAAAD5/wEAAAABAAUAAAD4/wIAAAAAAAYAAAD5/wIAAAABAAYAAAD6/wIAAAABAAYAAAD7/wIAAAABAAYAAAD7/wMAAAACAAcAAAD6/wMAAAACAAcAAAD5/wMAAAACAAcAAAD4/wMAAAACAAcAAAD3/wMAAAABAAcAAAD3/wIAAAACAAcAAAD2/wIAAAAAAAcAAAD2/wMAAAACAAcAAAABAAQAAAACAAcAAAADAAIAAAACAAcAAAADAAMAAAACAAcAAAAIAAEAAAABAAQAAAAFAAIAAAAAAAUAAAAEAAIAAAACAAcAAAAEAAMAAAACAAcAAAAFAAMAAAACAAcAAAAGAAMAAAACAAcAAAAGAAIAAAABAAUAAAAHAAIAAAABAAQAAAAHAAMAAAABAAUAAAAIAAMAAAABAAUAAAAHAAEAAAABAAMAAAAIAAIAAAAAAAMAAAAJAAEAAAAAAAMAAAAJAAIAAAAAAAMAAAAAAP7/AAABAAYAAAABAP7/AAABAAYAAAACAP7/AAABAAYAAAADAP7/AAACAAYAAAD///7/AAAAAAYAAAADAP3/AAACAAcAAAACAP3/AAACAAcAAAABAP3/AAACAAcAAAAAAP3/AAACAAcAAAD///3/AAACAAcAAAD///z/AAACAAcAAAA=")
+tile_set = SubResource("TileSet_jda6d")
+
+[node name="Player" parent="." unique_id=623290912 instance=ExtResource("2_ad6u8")]
+position = Vector2(-37, -79)
