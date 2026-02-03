@@ -2,11 +2,35 @@
 
 [ext_resource type="Script" uid="uid://ck8x2kfiejr1f" path="res://scripts/characters/player.gd" id="1_rp718"]
 [ext_resource type="Texture2D" uid="uid://dfc0mqaabrlt4" path="res://icon.svg" id="2_yewv4"]
-[ext_resource type="Script" uid="uid://bqiis0cj721ms" path="res://scripts/characters/procedural_legs.gd" id="3_76oj4"]
 [ext_resource type="Texture2D" uid="uid://v6ks0cjec4fl" path="res://assets/characters/leg.png" id="3_dyp2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76oj4"]
 size = Vector2(64, 18)
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_76oj4"]
+target_nodepath = NodePath("../../IK targets/LeftLeg Target")
+tip_nodepath = NodePath("thigh1/thigh2/shin/foot")
+ccdik_data_chain_length = 3
+joint_data/0/bone_index = 0
+joint_data/0/bone2d_node = NodePath("thigh1")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 1
+joint_data/1/bone2d_node = NodePath("thigh1/thigh2")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 2
+joint_data/2/bone2d_node = NodePath("thigh1/thigh2/shin")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = false
+joint_data/2/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_dyp2m"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2DCCDIK_76oj4")
 
 [node name="Player" type="CharacterBody2D" unique_id=623290912]
 collision_mask = 2
@@ -29,83 +53,86 @@ position = Vector2(-17, -4)
 
 [node name="CharacterContainer" type="Node2D" parent="legs" unique_id=231425896]
 
-[node name="body" type="Node2D" parent="legs/CharacterContainer" unique_id=611043176]
+[node name="Body" type="Node2D" parent="legs/CharacterContainer" unique_id=611043176]
 
-[node name="Node2D" type="Node2D" parent="legs/CharacterContainer/body" unique_id=861442093]
+[node name="Node2D" type="Node2D" parent="legs/CharacterContainer/Body" unique_id=861442093]
 position = Vector2(-51, -8)
 
-[node name="foot" type="Sprite2D" parent="legs/CharacterContainer/body/Node2D" unique_id=1162645321]
-position = Vector2(-109.52092, -35.99486)
+[node name="Bones" type="Node2D" parent="legs/CharacterContainer" unique_id=1589187651]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="legs/CharacterContainer/Bones" unique_id=803245349]
 scale = Vector2(2, 2)
+modification_stack = SubResource("SkeletonModificationStack2D_dyp2m")
+
+[node name="thigh1" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=1475335428]
+position = Vector2(-80, -55)
+rotation = 1.1646225
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(0.39509732, 0.91863924, -0.91863924, 0.39509732, -80, -55)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
+
+[node name="thigh2" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1" unique_id=172111068]
+position = Vector2(0, 13)
+rotation = -0.46755347
+rest = Transform2D(0.8926736, -0.45070368, 0.45070368, 0.8926736, 0, 13)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2" unique_id=1539796661]
+remote_path = NodePath("../thigh2")
+
+[node name="shin" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2" unique_id=1384138453]
+position = Vector2(0, 8.5)
+rotation = -0.5168836
+rest = Transform2D(0.8693634, -0.49417326, 0.49417326, 0.8693634, 0, 8.5)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2/shin" unique_id=1966871597]
+remote_path = NodePath("../shin")
+
+[node name="foot" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2/shin" unique_id=781262935]
+position = Vector2(-0.26046276, 11.502569)
+rotation = -0.27139515
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(0.9633978, -0.26807576, 0.26807576, 0.9633978, -0.26046276, 11.502569)
+auto_calculate_length_and_angle = false
+length = 5.0
+bone_angle = 90.0
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2/shin/foot" unique_id=2033578682]
+remote_path = NodePath("../foot")
+
+[node name="foot" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2/shin/foot" unique_id=1162645321]
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("3_dyp2m")
 offset = Vector2(0.5547104, 3.997364)
 vframes = 4
 frame = 3
 
-[node name="shin" type="Sprite2D" parent="legs/CharacterContainer/body/Node2D" unique_id=1388411943]
-position = Vector2(-109, -59)
-scale = Vector2(2, 2)
+[node name="shin" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2/shin" unique_id=1388411943]
 texture = ExtResource("3_dyp2m")
 offset = Vector2(0.3489151, 5.4986725)
 vframes = 4
 frame = 2
 
-[node name="thigh2" type="Sprite2D" parent="legs/CharacterContainer/body/Node2D" unique_id=761248481]
-position = Vector2(-109, -76)
-scale = Vector2(2, 2)
+[node name="thigh2" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2" unique_id=761248481]
 texture = ExtResource("3_dyp2m")
 offset = Vector2(0.3489151, 3.4986725)
 vframes = 4
 frame = 1
 
-[node name="thigh1" type="Sprite2D" parent="legs/CharacterContainer/body/Node2D" unique_id=40746098]
-position = Vector2(-109, -102)
-scale = Vector2(2, 2)
+[node name="thigh1" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1" unique_id=2099588042]
+position = Vector2(0.21085727, 0.11099434)
 texture = ExtResource("3_dyp2m")
-offset = Vector2(0.3489151, 6.4986725)
+offset = Vector2(-0.5554352, 6.844673)
 vframes = 4
 
-[node name="bones" type="Node2D" parent="legs/CharacterContainer" unique_id=1589187651]
+[node name="IK targets" type="Node2D" parent="legs/CharacterContainer" unique_id=558953320]
 
-[node name="Skeleton2D" type="Skeleton2D" parent="legs/CharacterContainer/bones" unique_id=803245349]
-scale = Vector2(2, 2)
-
-[node name="thigh1" type="Bone2D" parent="legs/CharacterContainer/bones/Skeleton2D" unique_id=1475335428]
-position = Vector2(-80, -55)
-auto_calculate_length_and_angle = false
-length = 16.0
-bone_angle = 0.0
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="legs/CharacterContainer/bones/Skeleton2D/thigh1" unique_id=1013501454]
-remote_path = NodePath("../../../../body/Node2D/thigh1")
-
-[node name="thigh2" type="Bone2D" parent="legs/CharacterContainer/bones/Skeleton2D/thigh1" unique_id=172111068]
-position = Vector2(0, 13)
-auto_calculate_length_and_angle = false
-length = 16.0
-bone_angle = 0.0
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="legs/CharacterContainer/bones/Skeleton2D/thigh1/thigh2" unique_id=1539796661]
-remote_path = NodePath("../../../../../body/Node2D/thigh2")
-
-[node name="shin" type="Bone2D" parent="legs/CharacterContainer/bones/Skeleton2D/thigh1/thigh2" unique_id=1384138453]
-position = Vector2(0, 8.5)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="legs/CharacterContainer/bones/Skeleton2D/thigh1/thigh2/shin" unique_id=1966871597]
-remote_path = NodePath("../../../../../../body/Node2D/shin")
-
-[node name="foot" type="Bone2D" parent="legs/CharacterContainer/bones/Skeleton2D/thigh1/thigh2/shin" unique_id=781262935]
-position = Vector2(-0.26046276, 11.502569)
-auto_calculate_length_and_angle = false
-length = 5.0
-bone_angle = 90.0
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="legs/CharacterContainer/bones/Skeleton2D/thigh1/thigh2/shin/foot" unique_id=2033578682]
-remote_path = NodePath("../../../../../../../body/Node2D/foot")
-
-[node name="target" type="Marker2D" parent="legs" unique_id=1361987053]
-
-[node name="Node" type="Node" parent="legs" unique_id=1296855114]
-
-[node name="tip" type="Marker2D" parent="legs/Node" unique_id=884462845]
-script = ExtResource("3_76oj4")
+[node name="LeftLeg Target" type="Marker2D" parent="legs/CharacterContainer/IK targets" unique_id=1587906840]
+position = Vector2(-209, -63)
