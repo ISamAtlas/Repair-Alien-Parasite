@@ -195,7 +195,7 @@ position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
 position = Vector2(-2.9517336, -15.013599)
-rotation = 0.025982827
+rotation = 0.02598285
 scale = Vector2(0.99991834, 0.99991834)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
@@ -210,7 +210,7 @@ autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(-2.3843408, 0.49488926)
+position = Vector2(-2.3843412, 0.49488926)
 rotation = 0.0047173323
 scale = Vector2(0.99991834, 0.99991834)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
