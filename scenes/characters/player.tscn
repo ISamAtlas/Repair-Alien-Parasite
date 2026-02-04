@@ -75,7 +75,7 @@ joint_data/2/editor_draw_gizmo = true
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_atpat"]
 target_nodepath = NodePath("../../IK targets/CenterKnee Target")
 tip_nodepath = NodePath("knees1/shin/foot")
-ccdik_data_chain_length = 3
+ccdik_data_chain_length = 4
 joint_data/0/bone_index = 8
 joint_data/0/bone2d_node = NodePath("knees1")
 joint_data/0/rotate_from_joint = false
@@ -97,8 +97,21 @@ joint_data/1/editor_draw_gizmo = true
 joint_data/2/bone_index = 10
 joint_data/2/bone2d_node = NodePath("knees1/shin/foot")
 joint_data/2/rotate_from_joint = true
-joint_data/2/enable_constraint = false
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = -60.0
+joint_data/2/constraint_angle_max = 60.0
+joint_data/2/constraint_angle_invert = true
+joint_data/2/constraint_in_localspace = true
 joint_data/2/editor_draw_gizmo = true
+joint_data/3/bone_index = 7
+joint_data/3/bone2d_node = NodePath("thigh2/thigh2/shin/foot")
+joint_data/3/rotate_from_joint = true
+joint_data/3/enable_constraint = true
+joint_data/3/constraint_angle_min = 9.999999
+joint_data/3/constraint_angle_max = -9.999999
+joint_data/3/constraint_angle_invert = true
+joint_data/3/constraint_in_localspace = true
+joint_data/3/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_dyp2m"]
 enabled = true
@@ -139,9 +152,9 @@ scale = Vector2(2, 2)
 modification_stack = SubResource("SkeletonModificationStack2D_dyp2m")
 
 [node name="thigh1" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=1475335428]
-position = Vector2(-73.5, -51.999996)
+position = Vector2(-73.50001, -52.999996)
 rotation = 1.7505826
-scale = Vector2(0.9999974, 0.9999974)
+scale = Vector2(0.9999972, 0.9999972)
 rest = Transform2D(-0.3588385, 0.9333969, -0.9333969, -0.3588385, -74.5, -47.499996)
 auto_calculate_length_and_angle = false
 length = 13.0
@@ -204,7 +217,7 @@ vframes = 5
 frame = 1
 
 [node name="LeftLegBoundingBox" type="Node2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=1323111793 node_paths=PackedStringArray("target")]
-position = Vector2(-96, -37.5)
+position = Vector2(-89, -38.5)
 script = ExtResource("3_76oj4")
 target = NodePath("../../../IK targets/LeftLeg Target")
 walk_index = 1
@@ -246,6 +259,7 @@ rest = Transform2D(0.99999994, 0, 0, 0.99999994, -0.26046276, 11.502569)
 auto_calculate_length_and_angle = false
 length = 5.0
 bone_angle = 90.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="foot" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2/thigh2/shin/foot" unique_id=1546498584]
 position = Vector2(0.2604638, -0.0025548935)
