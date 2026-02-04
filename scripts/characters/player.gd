@@ -8,6 +8,7 @@ const hammer: PackedScene = preload("uid://bj58b4m807sxf")
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var walk_index:int= 1
 @onready var legs :Node2D = $body/legs
+@onready var tool_parent: Node2D = $ToolParent
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -15,7 +16,7 @@ const JUMP_VELOCITY = -400.0
 func _ready() -> void:
 	if tool == tools.hammer:
 		var new_hammer = hammer.instantiate()
-		add_child(new_hammer)
+		tool_parent.add_child(new_hammer)
 
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
@@ -51,6 +52,7 @@ func flipSprites(value:bool) -> void:
 		
 		var leg_nodes : Array = legs.get_children()
 		legs.move_child(leg_nodes[1],0)
+		$ParasiteBody.flip_h = value
 		$"body/legs/left leg/shin".flip_h = value
 		$"body/legs/left leg/thigh".flip_h = value
 		$"body/legs/left leg/foot".flip_h = value

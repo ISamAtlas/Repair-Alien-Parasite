@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://ck8x2kfiejr1f" path="res://scripts/characters/player.gd" id="1_rp718"]
 [ext_resource type="Texture2D" uid="uid://d0myhcci4ejim" path="res://assets/characters/parasite_legs.png" id="2_t61fv"]
 [ext_resource type="Script" uid="uid://bqiis0cj721ms" path="res://scripts/characters/procedural_legs.gd" id="3_686vu"]
+[ext_resource type="Texture2D" uid="uid://dwvojn83w2mxy" path="res://assets/characters/parasite_body.png" id="4_hss88"]
+[ext_resource type="Texture2D" uid="uid://cbc6qthyx6suc" path="res://assets/characters/parasite_body_bare.png" id="5_6avc5"]
+[ext_resource type="Texture2D" uid="uid://b348e7u1trojk" path="res://assets/characters/parasite_body_shadings.png" id="6_mk55u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76oj4"]
-size = Vector2(64, 18)
+size = Vector2(40.5, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mk55u"]
 atlas = ExtResource("2_t61fv")
@@ -146,13 +149,120 @@ modification_count = 2
 modifications/0 = SubResource("SkeletonModification2DCCDIK_t61fv")
 modifications/1 = SubResource("SkeletonModification2DCCDIK_686vu")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xnwo"]
+atlas = ExtResource("4_hss88")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv5x3"]
+atlas = ExtResource("4_hss88")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykrpk"]
+atlas = ExtResource("4_hss88")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1nod"]
+atlas = ExtResource("4_hss88")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykrpk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xnwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv5x3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykrpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1nod")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqyw"]
+atlas = ExtResource("5_6avc5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svuau"]
+atlas = ExtResource("5_6avc5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro20i"]
+atlas = ExtResource("5_6avc5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y75b"]
+atlas = ExtResource("5_6avc5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tebod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svuau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro20i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y75b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nfx3"]
+atlas = ExtResource("6_mk55u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hnlq"]
+atlas = ExtResource("6_mk55u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d73qs"]
+atlas = ExtResource("6_mk55u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6wme"]
+atlas = ExtResource("6_mk55u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxwvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nfx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hnlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d73qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6wme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=623290912]
 collision_mask = 2
 script = ExtResource("1_rp718")
-tool = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247044228]
-position = Vector2(1, -4)
+position = Vector2(-27.25, 4)
 shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
@@ -167,25 +277,25 @@ scale = Vector2(2, 2)
 [node name="left leg" type="Node2D" parent="body/legs" unique_id=1403927414]
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=370476575]
-position = Vector2(-11.129767, -15.005148)
-rotation = 0.037865747
-scale = Vector2(0.9998559, 0.9998559)
+position = Vector2(-7.992525, -14.574781)
+rotation = 0.162221
+scale = Vector2(0.99991775, 0.99991775)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
 
 [node name="thigh" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=613335362]
-position = Vector2(-11.5, -30)
-rotation = -0.024679963
-scale = Vector2(0.9999022, 0.9999022)
+position = Vector2(-6.5, -29.5)
+rotation = 0.09966245
+scale = Vector2(0.999994, 0.999994)
 sprite_frames = SubResource("SpriteFrames_6avc5")
 autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=2050677461]
-position = Vector2(-10.74672, 0.50801945)
+position = Vector2(-9.536707, 0.86705685)
 rotation = 0.0047173332
-scale = Vector2(0.9998559, 0.9998559)
+scale = Vector2(0.99991775, 0.99991775)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)
@@ -194,25 +304,25 @@ offset = Vector2(1, -10)
 position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
-position = Vector2(-2.9517336, -15.013599)
-rotation = 0.02598285
-scale = Vector2(0.99991834, 0.99991834)
+position = Vector2(-3.608737, -16.02681)
+rotation = 0.0030987537
+scale = Vector2(0.9999158, 0.9999158)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
 
 [node name="thigh" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1032813898]
-position = Vector2(-3.4999962, -30)
-rotation = -0.036571804
-scale = Vector2(0.9999918, 0.9999918)
+position = Vector2(-4.5, -31)
+rotation = -0.059457127
+scale = Vector2(0.99999505, 0.99999505)
 sprite_frames = SubResource("SpriteFrames_6avc5")
 autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(-2.3843412, 0.49488926)
+position = Vector2(-2.6866288, -0.5354042)
 rotation = 0.0047173323
-scale = Vector2(0.99991834, 0.99991834)
+scale = Vector2(0.9999158, 0.9999158)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)
@@ -224,9 +334,9 @@ scale = Vector2(2, 2)
 modification_stack = SubResource("SkeletonModificationStack2D_686vu")
 
 [node name="left leg" type="Bone2D" parent="body/bones/Skeleton2D" unique_id=1006087297]
-position = Vector2(-11.5, -30)
-rotation = -0.027022192
-scale = Vector2(0.99999833, 0.99999833)
+position = Vector2(-6.5, -29.5)
+rotation = 0.099671625
+scale = Vector2(0.9999984, 0.9999984)
 rest = Transform2D(1, 0, 0, 1, -15, -24)
 metadata/_local_pose_override_enabled_ = true
 
@@ -255,8 +365,8 @@ remote_path = NodePath("../../../../../legs/left leg/shin")
 remote_path = NodePath("../../../../legs/left leg/thigh")
 
 [node name="right leg" type="Bone2D" parent="body/bones/Skeleton2D" unique_id=882230098]
-position = Vector2(4.000003, -30)
-rotation = -0.024685202
+position = Vector2(3, -31)
+rotation = -0.059457127
 scale = Vector2(0.99999505, 0.99999505)
 rest = Transform2D(1, 0, 0, 1, -15, -24)
 metadata/_local_pose_override_enabled_ = true
@@ -311,8 +421,38 @@ distance_threshold = 50
 range = 150
 walk_index = 1
 
+[node name="ParasiteBody" type="AnimatedSprite2D" parent="." unique_id=130711354]
+position = Vector2(-5, -68)
+scale = Vector2(1.9998367, 1.9998367)
+sprite_frames = SubResource("SpriteFrames_ykrpk")
+autoplay = "default"
+frame_progress = 0.46945924
+
+[node name="ToolParent" type="Node2D" parent="." unique_id=1838289126]
+position = Vector2(-5, -68)
+rotation = 0.7853982
+
+[node name="EmptyBody" type="AnimatedSprite2D" parent="." unique_id=1235849355]
+modulate = Color(1, 1, 1, 0.5372549)
+position = Vector2(-5, -68)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tebod")
+autoplay = "default"
+frame_progress = 0.43999863
+
+[node name="BodyShading" type="AnimatedSprite2D" parent="." unique_id=842116051]
+position = Vector2(-5, -68)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bxwvg")
+autoplay = "default"
+frame_progress = 0.5308089
+
 [node name="walk_cycle" type="Timer" parent="." unique_id=1584367786]
 wait_time = 0.2
 autostart = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=977015601]
+position = Vector2(21, 4)
+shape = SubResource("RectangleShape2D_76oj4")
 
 [connection signal="timeout" from="walk_cycle" to="." method="_on_walk_cycle_timeout"]
