@@ -18,7 +18,6 @@ func _on_stepped(index) -> void:
 		move = false
 
 func _physics_process(delta: float) -> void:
-	print("GRRR")
 	if !Global.jumped: 
 		target.global_position.y = global_position.y
 		var direction := Input.get_axis("left", "right")
@@ -27,5 +26,4 @@ func _physics_process(delta: float) -> void:
 			if abs(global_position.x - target.global_position.x) > distance_threshold:
 				target.global_position.x = global_position.x
 func _on_jumped() -> void:
-	print("heh?")
 	target.global_position.y = global_position.y-20
