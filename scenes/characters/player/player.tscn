@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b348e7u1trojk" path="res://assets/characters/parasite_body_shadings.png" id="6_mk55u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76oj4"]
-size = Vector2(40.5, 18)
+size = Vector2(87.25, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mk55u"]
 atlas = ExtResource("2_t61fv")
@@ -261,8 +261,8 @@ animations = [{
 collision_mask = 2
 script = ExtResource("1_rp718")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247044228]
-position = Vector2(-27.25, 4)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=977015601]
+position = Vector2(-5, 4)
 shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
@@ -305,7 +305,7 @@ position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
 position = Vector2(-3.608737, -16.02681)
-rotation = 0.0030987537
+rotation = 0.0030988134
 scale = Vector2(0.9999158, 0.9999158)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
@@ -320,7 +320,7 @@ autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(-2.6866288, -0.5354042)
+position = Vector2(-2.6866298, -0.5354042)
 rotation = 0.0047173323
 scale = Vector2(0.9999158, 0.9999158)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
@@ -426,7 +426,7 @@ position = Vector2(-5, -68)
 scale = Vector2(1.9998367, 1.9998367)
 sprite_frames = SubResource("SpriteFrames_ykrpk")
 autoplay = "default"
-frame_progress = 0.46945924
+frame_progress = 0.5165639
 
 [node name="ToolParent" type="Node2D" parent="." unique_id=1838289126]
 position = Vector2(-5, -68)
@@ -438,21 +438,17 @@ position = Vector2(-5, -68)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tebod")
 autoplay = "default"
-frame_progress = 0.43999863
+frame_progress = 0.4871032
 
 [node name="BodyShading" type="AnimatedSprite2D" parent="." unique_id=842116051]
 position = Vector2(-5, -68)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxwvg")
 autoplay = "default"
-frame_progress = 0.5308089
+frame_progress = 0.57791346
 
 [node name="walk_cycle" type="Timer" parent="." unique_id=1584367786]
 wait_time = 0.2
 autostart = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=977015601]
-position = Vector2(21, 4)
-shape = SubResource("RectangleShape2D_76oj4")
 
 [connection signal="timeout" from="walk_cycle" to="." method="_on_walk_cycle_timeout"]

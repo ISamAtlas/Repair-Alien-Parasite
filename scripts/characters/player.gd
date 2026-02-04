@@ -5,7 +5,6 @@ enum tools{hammer,wire_cutter}
 const hammer: PackedScene = preload("uid://bj58b4m807sxf")
 
 @export var tool:tools
-@onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var walk_index:int= 1
 @onready var legs :Node2D = $body/legs
 @onready var tool_parent: Node2D = $ToolParent
@@ -33,19 +32,13 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		var flipBool = intToBool(direction)
+		var flipBool = Global.intToBool(direction)
 		flipSprites(flipBool)
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-func intToBool(number:int) -> bool:
-	var value: bool = true
-	if number == -1:
-		value = false
-	return value
 
 func flipSprites(value:bool) -> void:
 	if value != $"body/legs/left leg/shin".flip_h:	
@@ -59,6 +52,8 @@ func flipSprites(value:bool) -> void:
 		$"body/legs/right leg/shin".flip_h = value
 		$"body/legs/right leg/thigh".flip_h = value
 		$"body/legs/right leg/foot".flip_h = value
+		$EmptyBody.flip_h = value
+		$BodyShading.flip_h = value
 	
 func _on_walk_cycle_timeout() -> void:
 	if !Global.jumped:
