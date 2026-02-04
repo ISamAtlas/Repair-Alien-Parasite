@@ -1,15 +1,23 @@
 extends CharacterBody2D
 
+enum tools{hammer,wire_cutter}
+
+const hammer: PackedScene = preload("uid://bj58b4m807sxf")
+
+@export var tool:tools
 @onready var collision: CollisionShape2D = $CollisionShape2D
-@onready var legs: Node2D = $legs
 @onready var walk_index:int= 1
+@onready var legs :Node2D = $body/legs
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func _ready() -> void:
+	if tool == tools.hammer:
+		var new_hammer = hammer.instantiate()
+		add_child(new_hammer)
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if !is_on_floor():
 		Global.jumped = true
 		velocity += get_gravity() * delta
@@ -24,13 +32,32 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
+		var flipBool = intToBool(direction)
+		flipSprites(flipBool)
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
+func intToBool(number:int) -> bool:
+	var value: bool = true
+	if number == -1:
+		value = false
+	return value
 
+func flipSprites(value:bool) -> void:
+	if value != $"body/legs/left leg/shin".flip_h:	
+		
+		var leg_nodes : Array = legs.get_children()
+		legs.move_child(leg_nodes[1],0)
+		$"body/legs/left leg/shin".flip_h = value
+		$"body/legs/left leg/thigh".flip_h = value
+		$"body/legs/left leg/foot".flip_h = value
+		$"body/legs/right leg/shin".flip_h = value
+		$"body/legs/right leg/thigh".flip_h = value
+		$"body/legs/right leg/foot".flip_h = value
+	
 func _on_walk_cycle_timeout() -> void:
 	if !Global.jumped:
 		walk_index *= -1

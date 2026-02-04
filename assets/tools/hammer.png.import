@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxnmnomo8woy"
-path="res://.godot/imported/parasite_body.png-6b22716f1e4561921b0cfd74b699084d.ctex"
+uid="uid://cbw3tqgdcbybj"
+path="res://.godot/imported/hammer.png-07b08358f5b6acdda016c3a994754831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/parasite_body.png"
-dest_files=["res://.godot/imported/parasite_body.png-6b22716f1e4561921b0cfd74b699084d.ctex"]
+source_file="res://assets/tools/hammer.png"
+dest_files=["res://.godot/imported/hammer.png-07b08358f5b6acdda016c3a994754831.ctex"]
 
 [params]
 

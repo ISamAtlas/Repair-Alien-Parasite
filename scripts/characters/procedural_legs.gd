@@ -1,8 +1,8 @@
-extends Node2D
+extends Marker2D
 
 @export var target: Marker2D
 @export var distance_threshold:int = 26
-@export var range:int=100
+@export var range:int=100 
 @export var walk_index:int
 
 var move:bool = false
@@ -20,8 +20,10 @@ func _on_stepped(index) -> void:
 func _physics_process(delta: float) -> void:
 	if !Global.jumped: 
 		target.global_position.y = global_position.y
-		var direction := Input.get_axis("left", "right")
-		target.global_position.x += direction*-1 * range * delta
+		var direction := Input.get_axis("left","right")
+		print(direction)
+		if direction!= 0:
+			target.global_position.x += walk_index *-1 * range * delta
 		if move:
 			if abs(global_position.x - target.global_position.x) > distance_threshold:
 				target.global_position.x = global_position.x
