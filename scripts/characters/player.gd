@@ -10,12 +10,13 @@ const JUMP_VELOCITY = -400.0
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if !is_on_floor():
-		legs.process_mode = Node.PROCESS_MODE_DISABLED
+		Global.jumped = true
 		velocity += get_gravity() * delta
 
 	# Handle jump.
 	if is_on_floor():
-		legs.process_mode = Node.PROCESS_MODE_INHERIT
+		if Global.jumped:
+			Global.jumped = false 
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_VELOCITY
 	# Get the input direction and handle the movement/deceleration.

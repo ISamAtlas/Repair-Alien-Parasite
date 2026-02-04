@@ -253,7 +253,7 @@ target = NodePath("../../../IK targets/RightLeg Target")
 [node name="IK targets" type="Node2D" parent="legs/CharacterContainer" unique_id=558953320]
 
 [node name="LeftLeg Target" type="Marker2D" parent="legs/CharacterContainer/IK targets" unique_id=1587906840]
-position = Vector2(-55, 88)
+position = Vector2(-77, 95)
 
 [node name="RightLeg Target" type="Marker2D" parent="legs/CharacterContainer/IK targets" unique_id=410816149]
-position = Vector2(50, 88)
+position = Vector2(88, 96)
