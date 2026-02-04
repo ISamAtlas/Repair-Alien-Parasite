@@ -32,5 +32,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_walk_cycle_timeout() -> void:
-	walk_index *= -1
-	SignalManager.emit_signal("step", walk_index)
+	if !Global.jumped:
+		walk_index *= -1
+		SignalManager.emit_signal("step", walk_index)
