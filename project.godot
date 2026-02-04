@@ -23,6 +23,10 @@ Global="*res://scripts/globals/Global.gd"
 SignalManager="*res://scripts/globals/SignalManager.gd"
 CanvasManager="*res://scenes/ui/CanvasManager.tscn"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/stretch/mode="canvas_items"
