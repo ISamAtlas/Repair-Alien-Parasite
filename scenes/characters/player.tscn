@@ -40,10 +40,43 @@ joint_data/2/constraint_angle_invert = true
 joint_data/2/constraint_in_localspace = true
 joint_data/2/editor_draw_gizmo = true
 
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_dyp2m"]
+target_nodepath = NodePath("../../IK targets/RightLeg Target")
+tip_nodepath = NodePath("thigh2/thigh2/shin/foot")
+ccdik_data_chain_length = 3
+joint_data/0/bone_index = 4
+joint_data/0/bone2d_node = NodePath("thigh2")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -100.300995
+joint_data/0/constraint_angle_max = 186.45898
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 5
+joint_data/1/bone2d_node = NodePath("thigh2/thigh2")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -26.718998
+joint_data/1/constraint_angle_max = -303.616
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 6
+joint_data/2/bone2d_node = NodePath("thigh2/thigh2/shin")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = 318.91498
+joint_data/2/constraint_angle_max = 93.052
+joint_data/2/constraint_angle_invert = true
+joint_data/2/constraint_in_localspace = true
+joint_data/2/editor_draw_gizmo = true
+
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_dyp2m"]
 enabled = true
-modification_count = 1
+modification_count = 2
 modifications/0 = SubResource("SkeletonModification2DCCDIK_76oj4")
+modifications/1 = SubResource("SkeletonModification2DCCDIK_dyp2m")
 
 [node name="Player" type="CharacterBody2D" unique_id=623290912]
 collision_mask = 2
@@ -60,7 +93,7 @@ position = Vector2(1, -11)
 shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
-position = Vector2(2, -14)
+position = Vector2(0, -39)
 zoom = Vector2(1.75, 1.75)
 
 [node name="legs" type="Node2D" parent="." unique_id=1923044990]
@@ -68,23 +101,18 @@ position = Vector2(0, -93)
 
 [node name="CharacterContainer" type="Node2D" parent="legs" unique_id=231425896]
 
-[node name="Body" type="Node2D" parent="legs/CharacterContainer" unique_id=611043176]
-
-[node name="Node2D" type="Node2D" parent="legs/CharacterContainer/Body" unique_id=861442093]
-position = Vector2(-51, -8)
-
 [node name="Bones" type="Node2D" parent="legs/CharacterContainer" unique_id=1589187651]
 position = Vector2(135, 241)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="legs/CharacterContainer/Bones" unique_id=803245349]
-position = Vector2(-11, -63)
+position = Vector2(-11, -67)
 scale = Vector2(2, 2)
 modification_stack = SubResource("SkeletonModificationStack2D_dyp2m")
 
 [node name="thigh1" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=1475335428]
-position = Vector2(-80, -55)
-rotation = 1.1646225
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(-66.00001, -55)
+rotation = 1.7505827
+scale = Vector2(0.9999981, 0.9999981)
 rest = Transform2D(0.39509732, 0.91863924, -0.91863924, 0.39509732, -80, -55)
 auto_calculate_length_and_angle = false
 length = 13.0
@@ -144,11 +172,88 @@ offset = Vector2(-0.5554352, 6.844673)
 vframes = 4
 
 [node name="LeftLegBoundingBox" type="Node2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=1323111793 node_paths=PackedStringArray("target")]
-position = Vector2(-101.5, -38.5)
+position = Vector2(-88, -38.5)
 script = ExtResource("3_76oj4")
 target = NodePath("../../../IK targets/LeftLeg Target")
+
+[node name="thigh2" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=2061709091]
+position = Vector2(-58.5, -55)
+rotation = -1.7505826
+scale = Vector2(0.99999446, 0.99999446)
+rest = Transform2D(0.39509732, 0.91863924, -0.91863924, 0.39509732, -80, -55)
+auto_calculate_length_and_angle = false
+length = 13.0
+bone_angle = 89.99996
+metadata/_local_pose_override_enabled_ = true
+
+[node name="thigh2" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2" unique_id=589805563]
+position = Vector2(0, 13)
+rest = Transform2D(0.8926736, -0.45070368, 0.45070368, 0.8926736, 0, 13)
+auto_calculate_length_and_angle = false
+length = 8.501053
+bone_angle = 90.00316
+metadata/_local_pose_override_enabled_ = true
+
+[node name="shin" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2/thigh2" unique_id=1840123377]
+position = Vector2(0, 8.5)
+rest = Transform2D(0.8693634, -0.49417326, 0.49417326, 0.8693634, 0, 8.5)
+auto_calculate_length_and_angle = false
+length = 11.50552
+bone_angle = 91.29715
+metadata/_local_pose_override_enabled_ = true
+
+[node name="foot" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2/thigh2/shin" unique_id=554567690]
+position = Vector2(-0.26046276, 11.502569)
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(0.9633978, -0.26807576, 0.26807576, 0.9633978, -0.26046276, 11.502569)
+auto_calculate_length_and_angle = false
+length = 5.0
+bone_angle = 90.0
+
+[node name="foot" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2/thigh2/shin/foot" unique_id=1546498584]
+position = Vector2(0.2604638, -0.0025548935)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_dyp2m")
+offset = Vector2(0, 6.500003)
+flip_h = true
+vframes = 4
+frame = 3
+
+[node name="shin" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2/thigh2/shin" unique_id=223751021]
+position = Vector2(-0.05149014, 0.1160121)
+rotation = 3.1415927
+texture = ExtResource("3_dyp2m")
+offset = Vector2(-0.051490784, -7.3840013)
+flip_v = true
+vframes = 4
+frame = 2
+
+[node name="thigh2" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2/thigh2" unique_id=664199738]
+position = Vector2(0, 5.722046e-06)
+texture = ExtResource("3_dyp2m")
+offset = Vector2(0, 5.000002)
+flip_h = true
+flip_v = true
+vframes = 4
+frame = 1
+
+[node name="thigh1" type="Sprite2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2" unique_id=775673635]
+position = Vector2(-0.0015864372, -0.09820558)
+rotation = 3.1415927
+texture = ExtResource("3_dyp2m")
+offset = Vector2(-0.0015869141, -7.5982094)
+flip_v = true
+vframes = 4
+
+[node name="RightLegBoundingBox" type="Node2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=2000344632 node_paths=PackedStringArray("target")]
+position = Vector2(-37, -38.5)
+script = ExtResource("3_76oj4")
+target = NodePath("../../../IK targets/RightLeg Target")
 
 [node name="IK targets" type="Node2D" parent="legs/CharacterContainer" unique_id=558953320]
 
 [node name="LeftLeg Target" type="Marker2D" parent="legs/CharacterContainer/IK targets" unique_id=1587906840]
-position = Vector2(-74, 79)
+position = Vector2(-55, 88)
+
+[node name="RightLeg Target" type="Marker2D" parent="legs/CharacterContainer/IK targets" unique_id=410816149]
+position = Vector2(50, 88)
