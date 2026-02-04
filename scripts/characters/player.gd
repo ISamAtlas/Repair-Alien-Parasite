@@ -2,10 +2,11 @@ extends CharacterBody2D
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var legs: Node2D = $legs
-
+@onready var walk_index:int= 1
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -28,3 +29,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_walk_cycle_timeout() -> void:
+	walk_index *= -1
+	SignalManager.emit_signal("step", walk_index)

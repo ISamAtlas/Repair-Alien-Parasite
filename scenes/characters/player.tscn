@@ -16,7 +16,7 @@ joint_data/0/bone_index = 0
 joint_data/0/bone2d_node = NodePath("thigh1")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = 100.300995
+joint_data/0/constraint_angle_min = 100.30099
 joint_data/0/constraint_angle_max = -186.45898
 joint_data/0/constraint_angle_invert = false
 joint_data/0/constraint_in_localspace = true
@@ -25,7 +25,7 @@ joint_data/1/bone_index = 1
 joint_data/1/bone2d_node = NodePath("thigh1/thigh2")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = 26.718998
+joint_data/1/constraint_angle_min = 26.718996
 joint_data/1/constraint_angle_max = 303.616
 joint_data/1/constraint_angle_invert = true
 joint_data/1/constraint_in_localspace = true
@@ -34,7 +34,7 @@ joint_data/2/bone_index = 2
 joint_data/2/bone2d_node = NodePath("thigh1/thigh2/shin")
 joint_data/2/rotate_from_joint = false
 joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = -318.91495
+joint_data/2/constraint_angle_min = -318.91492
 joint_data/2/constraint_angle_max = -93.052
 joint_data/2/constraint_angle_invert = true
 joint_data/2/constraint_in_localspace = true
@@ -48,7 +48,7 @@ joint_data/0/bone_index = 4
 joint_data/0/bone2d_node = NodePath("thigh2")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -100.300995
+joint_data/0/constraint_angle_min = -100.30099
 joint_data/0/constraint_angle_max = 186.45898
 joint_data/0/constraint_angle_invert = false
 joint_data/0/constraint_in_localspace = true
@@ -57,7 +57,7 @@ joint_data/1/bone_index = 5
 joint_data/1/bone2d_node = NodePath("thigh2/thigh2")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = -26.718998
+joint_data/1/constraint_angle_min = -26.718996
 joint_data/1/constraint_angle_max = -303.616
 joint_data/1/constraint_angle_invert = true
 joint_data/1/constraint_in_localspace = true
@@ -66,7 +66,7 @@ joint_data/2/bone_index = 6
 joint_data/2/bone2d_node = NodePath("thigh2/thigh2/shin")
 joint_data/2/rotate_from_joint = false
 joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = 318.91498
+joint_data/2/constraint_angle_min = 318.91492
 joint_data/2/constraint_angle_max = 93.052
 joint_data/2/constraint_angle_invert = true
 joint_data/2/constraint_in_localspace = true
@@ -89,7 +89,7 @@ texture = ExtResource("2_yewv4")
 offset = Vector2(0, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247044228]
-position = Vector2(1, -11)
+position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
@@ -110,13 +110,13 @@ scale = Vector2(2, 2)
 modification_stack = SubResource("SkeletonModificationStack2D_dyp2m")
 
 [node name="thigh1" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=1475335428]
-position = Vector2(-66.00001, -55)
-rotation = 1.7505827
-scale = Vector2(0.9999981, 0.9999981)
+position = Vector2(-74.5, -47.499996)
+rotation = 2.0140898
+scale = Vector2(0.9999982, 0.9999982)
 rest = Transform2D(0.39509732, 0.91863924, -0.91863924, 0.39509732, -80, -55)
 auto_calculate_length_and_angle = false
 length = 13.0
-bone_angle = 89.999985
+bone_angle = 89.99998
 metadata/_local_pose_override_enabled_ = true
 
 [node name="thigh2" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1" unique_id=172111068]
@@ -125,7 +125,7 @@ rotation = -0.46755347
 rest = Transform2D(0.8926736, -0.45070368, 0.45070368, 0.8926736, 0, 13)
 auto_calculate_length_and_angle = false
 length = 8.501053
-bone_angle = 90.00318
+bone_angle = 90.003174
 metadata/_local_pose_override_enabled_ = true
 
 [node name="shin" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2" unique_id=1384138453]
@@ -134,13 +134,13 @@ rotation = -0.5168836
 rest = Transform2D(0.8693634, -0.49417326, 0.49417326, 0.8693634, 0, 8.5)
 auto_calculate_length_and_angle = false
 length = 11.50552
-bone_angle = 91.29716
+bone_angle = 91.29715
 metadata/_local_pose_override_enabled_ = true
 
 [node name="foot" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh1/thigh2/shin" unique_id=781262935]
 position = Vector2(-0.26046276, 11.502569)
-rotation = -0.27139515
-scale = Vector2(0.99999994, 0.99999994)
+rotation = -0.27139512
+scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(0.9633978, -0.26807576, 0.26807576, 0.9633978, -0.26046276, 11.502569)
 auto_calculate_length_and_angle = false
 length = 5.0
@@ -172,18 +172,19 @@ offset = Vector2(-0.5554352, 6.844673)
 vframes = 4
 
 [node name="LeftLegBoundingBox" type="Node2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=1323111793 node_paths=PackedStringArray("target")]
-position = Vector2(-88, -38.5)
+position = Vector2(-96, -37.5)
 script = ExtResource("3_76oj4")
 target = NodePath("../../../IK targets/LeftLeg Target")
+walk_index = 1
 
 [node name="thigh2" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=2061709091]
-position = Vector2(-58.5, -55)
-rotation = -1.7505826
+position = Vector2(-49, -47.5)
+rotation = -1.8199284
 scale = Vector2(0.99999446, 0.99999446)
 rest = Transform2D(0.39509732, 0.91863924, -0.91863924, 0.39509732, -80, -55)
 auto_calculate_length_and_angle = false
 length = 13.0
-bone_angle = 89.99996
+bone_angle = 89.99995
 metadata/_local_pose_override_enabled_ = true
 
 [node name="thigh2" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2" unique_id=589805563]
@@ -191,7 +192,7 @@ position = Vector2(0, 13)
 rest = Transform2D(0.8926736, -0.45070368, 0.45070368, 0.8926736, 0, 13)
 auto_calculate_length_and_angle = false
 length = 8.501053
-bone_angle = 90.00316
+bone_angle = 90.00315
 metadata/_local_pose_override_enabled_ = true
 
 [node name="shin" type="Bone2D" parent="legs/CharacterContainer/Bones/Skeleton2D/thigh2/thigh2" unique_id=1840123377]
@@ -246,9 +247,10 @@ flip_v = true
 vframes = 4
 
 [node name="RightLegBoundingBox" type="Node2D" parent="legs/CharacterContainer/Bones/Skeleton2D" unique_id=2000344632 node_paths=PackedStringArray("target")]
-position = Vector2(-37, -38.5)
+position = Vector2(-28.5, -39)
 script = ExtResource("3_76oj4")
 target = NodePath("../../../IK targets/RightLeg Target")
+walk_index = -1
 
 [node name="IK targets" type="Node2D" parent="legs/CharacterContainer" unique_id=558953320]
 
@@ -257,3 +259,9 @@ position = Vector2(-77, 95)
 
 [node name="RightLeg Target" type="Marker2D" parent="legs/CharacterContainer/IK targets" unique_id=410816149]
 position = Vector2(88, 96)
+
+[node name="walk_cycle" type="Timer" parent="legs" unique_id=1793924084]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="legs/walk_cycle" to="." method="_on_walk_cycle_timeout"]
