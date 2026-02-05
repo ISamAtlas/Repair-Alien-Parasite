@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cbw3tqgdcbybj" path="res://assets/tools/hammer.png" id="8_42irl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76oj4"]
-size = Vector2(85, 18)
+size = Vector2(29, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mk55u"]
 atlas = ExtResource("2_t61fv")
@@ -311,8 +311,8 @@ position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
 position = Vector2(-3.7779634, -16.017761)
-rotation = 0.014397017
-scale = Vector2(0.99991274, 0.99991274)
+rotation = 0.014397048
+scale = Vector2(0.9999137, 0.9999137)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
@@ -326,9 +326,9 @@ autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(-3.0309386, -0.51697445)
-rotation = 0.0047173323
-scale = Vector2(0.99991274, 0.99991274)
+position = Vector2(-3.0309381, -0.5169592)
+rotation = 0.004717333
+scale = Vector2(0.9999137, 0.9999137)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)
@@ -379,8 +379,8 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="shin" type="Bone2D" parent="body/bones/Skeleton2D/right leg" unique_id=804502265]
 position = Vector2(-5.054474e-05, 14.999714)
-rotation = 0.06255621
-scale = Vector2(0.9999177, 0.9999177)
+rotation = 0.0625562
+scale = Vector2(0.99991775, 0.99991775)
 rest = Transform2D(1, 0, 0, 1, 0.5, 14)
 metadata/_local_pose_override_enabled_ = true
 
