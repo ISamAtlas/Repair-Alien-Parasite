@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3mevjhxd1f0i"
-path="res://.godot/imported/powerline_pole.png-d31b8f1ceed12191af2633299913b4c3.ctex"
+path="res://.godot/imported/powerline_pole.png-5f1bab216a1d5dbad5eb4f9445735c42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/interactables/powerline_pole.png"
-dest_files=["res://.godot/imported/powerline_pole.png-d31b8f1ceed12191af2633299913b4c3.ctex"]
+source_file="res://assets/environment/powerline_pole.png"
+dest_files=["res://.godot/imported/powerline_pole.png-5f1bab216a1d5dbad5eb4f9445735c42.ctex"]
 
 [params]
 

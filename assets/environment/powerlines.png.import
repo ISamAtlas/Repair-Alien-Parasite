@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vsjuosuxey38"
-path="res://.godot/imported/powerline_pole.png-8340e24bfe9e3f44ecd6e785c24809bc.ctex"
+uid="uid://bcdtip6ntlmne"
+path="res://.godot/imported/powerlines.png-191212c977b5bde7e09491f208f44bcf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/powerline_pole.png"
-dest_files=["res://.godot/imported/powerline_pole.png-8340e24bfe9e3f44ecd6e785c24809bc.ctex"]
+source_file="res://assets/environment/powerlines.png"
+dest_files=["res://.godot/imported/powerlines.png-191212c977b5bde7e09491f208f44bcf.ctex"]
 
 [params]
 
