@@ -3,6 +3,30 @@
 [ext_resource type="Script" uid="uid://dghfqul7u2i7y" path="res://scripts/ui/pause_menu/main.gd" id="1_sgvfw"]
 [ext_resource type="Script" uid="uid://bvwqx3iuqmbfp" path="res://scripts/ui/options/h_slider.gd" id="2_qtnq8"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtnq8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.40400022, 0.057014897, 0.12252001, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 15
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c2fl"]
+bg_color = Color(0.66184235, 0.15506244, 0.20917314, 1)
+border_width_left = 30
+border_width_top = 20
+border_width_right = 30
+border_width_bottom = 20
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [node name="CanvasManager" type="CanvasLayer" unique_id=372715016]
 process_mode = 3
 
@@ -104,6 +128,18 @@ bus_name = "SFX"
 [node name="resume" type="Button" parent="pause_handler/Options/VBoxContainer" unique_id=226931217]
 layout_mode = 2
 text = "Resume"
+
+[node name="UI" type="Node2D" parent="." unique_id=139384261]
+
+[node name="ProgressBar" type="ProgressBar" parent="UI" unique_id=1008229236]
+offset_left = 43.0
+offset_top = 535.0
+offset_right = 517.0
+offset_bottom = 605.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qtnq8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5c2fl")
+value = 100.0
+show_percentage = false
 
 [connection signal="pressed" from="pause_handler/Pause Menu/VBoxContainer/resume" to="pause_handler" method="_on_resume_pressed"]
 [connection signal="pressed" from="pause_handler/Pause Menu/VBoxContainer/options" to="pause_handler" method="_on_options_pressed"]

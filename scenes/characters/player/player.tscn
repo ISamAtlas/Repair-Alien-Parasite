@@ -263,7 +263,6 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=623290912]
-scale = Vector2(0.75, 0.75)
 collision_mask = 2
 script = ExtResource("1_rp718")
 tool = 1
@@ -274,7 +273,7 @@ shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
 position = Vector2(0, -39)
-zoom = Vector2(1.75, 1.75)
+zoom = Vector2(1.5, 1.5)
 
 [node name="body" type="Node2D" parent="." unique_id=802094910]
 
@@ -283,24 +282,24 @@ zoom = Vector2(1.75, 1.75)
 [node name="left leg" type="Node2D" parent="body/legs" unique_id=1403927414]
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=370476575]
-position = Vector2(-15.985045, -29.149618)
-rotation = 0.16222091
-scale = Vector2(1.9998255, 1.9998255)
+position = Vector2(-16.161715, -29.167725)
+rotation = 0.15869743
+scale = Vector2(1.9998256, 1.9998256)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
 
 [node name="thigh" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=613335362]
 position = Vector2(-13, -59)
-rotation = 0.09966342
-scale = Vector2(1.9999956, 1.9999956)
+rotation = 0.10558326
+scale = Vector2(1.9999964, 1.9999964)
 sprite_frames = SubResource("SpriteFrames_6avc5")
 autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=2050677461]
-position = Vector2(-19.073391, 1.7339046)
-rotation = 0.004717342
+position = Vector2(-19.141224, 1.7264881)
+rotation = 0.004717354
 scale = Vector2(1.9998256, 1.9998256)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
@@ -310,25 +309,25 @@ offset = Vector2(1, -10)
 position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
-position = Vector2(-0.055925846, -32.0355)
-rotation = 0.0143970195
-scale = Vector2(1.9998256, 1.9998256)
+position = Vector2(-0.0559268, -32.035522)
+rotation = 0.014397011
+scale = Vector2(1.9998257, 1.9998257)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
 
 [node name="thigh" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1032813898]
 position = Vector2(-1.5, -62)
-rotation = -0.048158944
-scale = Vector2(1.99999, 1.99999)
+rotation = -0.04815895
+scale = Vector2(1.9999901, 1.9999901)
 sprite_frames = SubResource("SpriteFrames_6avc5")
 autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(1.4381237, -1.0339279)
-rotation = 0.0047173337
-scale = Vector2(1.9998255, 1.9998255)
+position = Vector2(1.4381227, -1.0339451)
+rotation = 0.004717336
+scale = Vector2(1.9998257, 1.9998257)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)

@@ -1,23 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://buealbqti4yl8"]
+[gd_scene format=3 uid="uid://buealbqti4yl8"]
 
 [ext_resource type="Script" uid="uid://ci86ygor6nwp5" path="res://scripts/ui/level_screen/main.gd" id="1_e6opw"]
 [ext_resource type="Script" uid="uid://bu0oj70v4scp6" path="res://scripts/ui/level_screen/level_select.gd" id="2_fu2qk"]
 
-[node name="Levels" type="Node2D"]
+[node name="Levels" type="Node2D" unique_id=1190736148]
 script = ExtResource("1_e6opw")
 
-[node name="Button" type="Button" parent="." groups=["level"]]
+[node name="Button" type="Button" parent="." unique_id=1930507917 groups=["level"]]
 offset_left = 164.0
 offset_top = 125.0
 offset_right = 182.0
 offset_bottom = 156.0
 text = "1"
 script = ExtResource("2_fu2qk")
+target_scene_path = "res://scenes/gameplay/levels/level 1.tscn"
 
-[node name="Button2" type="Button" parent="." groups=["level"]]
-offset_left = 164.0
+[node name="Button2" type="Button" parent="." unique_id=220228744 groups=["level"]]
+offset_left = 347.0
 offset_top = 125.0
-offset_right = 182.0
+offset_right = 365.0
 offset_bottom = 156.0
 text = "2"
 script = ExtResource("2_fu2qk")
