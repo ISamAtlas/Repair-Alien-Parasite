@@ -4,10 +4,12 @@ extends CenterContainer
 @onready var options: Panel = $Options
 
 func pause() -> void:
+	visible = true
 	pause_menu.set_visible(true)
 	get_tree().set_pause(true)
 
 func resume() -> void:
+	visible = false
 	pause_menu.set_visible(false)
 	options.set_visible(false)
 	get_tree().set_pause(false)
