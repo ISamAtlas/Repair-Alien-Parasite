@@ -13,6 +13,9 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 func _ready() -> void:
+	$BodyShading.frame=0
+	$EmptyBody.frame=0
+	$ParasiteBody.frame=0
 	if tool == tools.hammer:
 		var new_hammer = hammer.instantiate()
 		tool_parent.add_child(new_hammer)

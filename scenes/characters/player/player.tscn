@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dwvojn83w2mxy" path="res://assets/characters/parasite_body.png" id="4_hss88"]
 [ext_resource type="Texture2D" uid="uid://cbc6qthyx6suc" path="res://assets/characters/parasite_body_bare.png" id="5_6avc5"]
 [ext_resource type="Texture2D" uid="uid://b348e7u1trojk" path="res://assets/characters/parasite_body_shadings.png" id="6_mk55u"]
+[ext_resource type="Script" uid="uid://bjredijeqwhbq" path="res://scripts/characters/hammer.gd" id="7_xuses"]
+[ext_resource type="Texture2D" uid="uid://cbw3tqgdcbybj" path="res://assets/tools/hammer.png" id="8_42irl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76oj4"]
-size = Vector2(87.25, 18)
+size = Vector2(85, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mk55u"]
 atlas = ExtResource("2_t61fv")
@@ -185,6 +187,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uudf8"]
+size = Vector2(52, 39.5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kqyw"]
 atlas = ExtResource("5_6avc5")
 region = Rect2(0, 0, 32, 32)
@@ -260,9 +265,10 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=623290912]
 collision_mask = 2
 script = ExtResource("1_rp718")
+tool = 1
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=977015601]
-position = Vector2(-5, 4)
+position = Vector2(-5.5, 4)
 shape = SubResource("RectangleShape2D_76oj4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905640174]
@@ -304,25 +310,25 @@ offset = Vector2(1, -10)
 position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
-position = Vector2(-3.608737, -16.02681)
-rotation = 0.0030988134
-scale = Vector2(0.9999158, 0.9999158)
+position = Vector2(-3.7779634, -16.017761)
+rotation = 0.014397017
+scale = Vector2(0.99991274, 0.99991274)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
 
 [node name="thigh" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1032813898]
 position = Vector2(-4.5, -31)
-rotation = -0.059457127
+rotation = -0.04815895
 scale = Vector2(0.99999505, 0.99999505)
 sprite_frames = SubResource("SpriteFrames_6avc5")
 autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(-2.6866298, -0.5354042)
+position = Vector2(-3.0309386, -0.51697445)
 rotation = 0.0047173323
-scale = Vector2(0.9999158, 0.9999158)
+scale = Vector2(0.99991274, 0.99991274)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)
@@ -401,7 +407,7 @@ remote_path = NodePath("../../../../legs/right leg/thigh")
 position = Vector2(-21, 21)
 
 [node name="rightLeg" type="Marker2D" parent="body/IK Targets" unique_id=1230936876]
-position = Vector2(11, 22)
+position = Vector2(10, 21)
 
 [node name="IK Base" type="Node2D" parent="body" unique_id=1244359582]
 
@@ -426,11 +432,22 @@ position = Vector2(-5, -68)
 scale = Vector2(1.9998367, 1.9998367)
 sprite_frames = SubResource("SpriteFrames_ykrpk")
 autoplay = "default"
-frame_progress = 0.5165639
+frame = 1
+frame_progress = 0.33215007
 
-[node name="ToolParent" type="Node2D" parent="." unique_id=1838289126]
-position = Vector2(-5, -68)
-rotation = 0.7853982
+[node name="Hammer" type="Node2D" parent="." unique_id=502069976]
+position = Vector2(-4, -60)
+script = ExtResource("7_xuses")
+
+[node name="Hammer" type="Sprite2D" parent="Hammer" unique_id=2118611704]
+position = Vector2(0, -72)
+scale = Vector2(2, 2)
+texture = ExtResource("8_42irl")
+offset = Vector2(0, 16)
+
+[node name="HammerHead" type="CollisionShape2D" parent="." unique_id=129397487]
+position = Vector2(-6, -132.75)
+shape = SubResource("RectangleShape2D_uudf8")
 
 [node name="EmptyBody" type="AnimatedSprite2D" parent="." unique_id=1235849355]
 modulate = Color(1, 1, 1, 0.5372549)
@@ -438,14 +455,16 @@ position = Vector2(-5, -68)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tebod")
 autoplay = "default"
-frame_progress = 0.4871032
+frame = 2
+frame_progress = 0.70306474
 
 [node name="BodyShading" type="AnimatedSprite2D" parent="." unique_id=842116051]
 position = Vector2(-5, -68)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxwvg")
 autoplay = "default"
-frame_progress = 0.57791346
+frame = 3
+frame_progress = 0.21738254
 
 [node name="walk_cycle" type="Timer" parent="." unique_id=1584367786]
 wait_time = 0.2

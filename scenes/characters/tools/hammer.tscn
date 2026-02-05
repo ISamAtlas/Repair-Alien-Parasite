@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cbw3tqgdcbybj" path="res://assets/tools/hammer.png" id="2_lxxad"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uudf8"]
-size = Vector2(52, 30)
+size = Vector2(52, 39.5)
 
-[node name="Hammer" type="Node2D" unique_id=1162052859]
+[node name="Hammer" type="CharacterBody2D" unique_id=1035075143]
+collision_layer = 5
+collision_mask = 2
 script = ExtResource("1_w0gad")
 
 [node name="Hammer" type="Sprite2D" parent="." unique_id=2118611704]
@@ -14,11 +16,6 @@ position = Vector2(0, -40)
 scale = Vector2(2, 2)
 texture = ExtResource("2_lxxad")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=279619107]
-position = Vector2(0, -38)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=129397487]
-position = Vector2(-2, -41)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=129397487]
+position = Vector2(-2, -78)
 shape = SubResource("RectangleShape2D_uudf8")
