@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2up0jfkmrssw"]
 
-[ext_resource type="Texture2D" uid="uid://oacoa043jtwe" path="res://assets/ui/tutorial/battery_empty.png" id="1_5phqq"]
+[ext_resource type="Texture2D" uid="uid://oacoa043jtwe" path="res://assets/ui/tutorial/battery.png" id="1_5phqq"]
 [ext_resource type="Script" uid="uid://blanvob0pk80x" path="res://scripts/gameplay/misc/battery.gd" id="2_plvqi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvv5l"]
