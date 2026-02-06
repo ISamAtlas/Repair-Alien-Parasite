@@ -15,3 +15,4 @@ func unlock(given_number) -> void:
 func _on_pressed() -> void:
 	print("sending player to level ", number)
 	get_tree().change_scene_to_file(target_scene_path)
+	SignalManager.emit_signal("fade", true)

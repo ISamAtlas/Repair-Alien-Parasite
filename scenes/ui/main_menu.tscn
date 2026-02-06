@@ -1,32 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkahhjx081we3"]
+[gd_scene format=3 uid="uid://dkahhjx081we3"]
 
 [ext_resource type="Script" uid="uid://fx5onf22g8qe" path="res://scripts/ui/buttons/generic_scene_change.gd" id="1_sl1te"]
 
-[node name="main-menu" type="Node2D"]
+[node name="main-menu" type="Node2D" unique_id=116978123]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=424664090]
 offset_top = 138.0
 offset_right = 577.0
 offset_bottom = 391.0
 scale = Vector2(2, 2)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=329662267]
 layout_mode = 2
 
-[node name="play" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=161907060]
 layout_mode = 2
 text = "Play"
 script = ExtResource("1_sl1te")
 target_scene_path = "res://scenes/ui/levels.tscn"
 
-[node name="options" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="options" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1270523631]
 layout_mode = 2
 text = "Options
 "
 script = ExtResource("1_sl1te")
 target_scene_path = "res://scenes/ui/options.tscn"
 
-[node name="credits" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="credits" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1810130815]
 layout_mode = 2
 text = "Credits"
 script = ExtResource("1_sl1te")

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dghfqul7u2i7y" path="res://scripts/ui/pause_menu/main.gd" id="1_sgvfw"]
 [ext_resource type="Script" uid="uid://bvwqx3iuqmbfp" path="res://scripts/ui/options/h_slider.gd" id="2_qtnq8"]
 [ext_resource type="Script" uid="uid://cpl8scy8p2yoa" path="res://scripts/ui/canvas manager/ui.gd" id="3_5c2fl"]
+[ext_resource type="Script" uid="uid://cm2q6ufb38u06" path="res://scripts/globals/black_screen.gd" id="4_0oetj"]
+[ext_resource type="FontFile" uid="uid://lkkmatu8d1ns" path="res://assets/fonts/editundo.ttf" id="4_v8xty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtnq8"]
 bg_color = Color(0, 0, 0, 1)
@@ -87,6 +89,61 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_0oetj"),
 &"progress_bar_init": SubResource("Animation_v8xty")
+}
+
+[sub_resource type="FontVariation" id="FontVariation_pk4kl"]
+base_font = ExtResource("4_v8xty")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bek06"]
+font = SubResource("FontVariation_pk4kl")
+font_size = 96
+
+[sub_resource type="Animation" id="Animation_pk4kl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bek06"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bux5w"]
+_data = {
+&"RESET": SubResource("Animation_pk4kl"),
+&"fade_in": SubResource("Animation_bek06")
 }
 
 [node name="CanvasManager" type="CanvasLayer" unique_id=372715016]
@@ -206,6 +263,25 @@ show_percentage = false
 
 [node name="anim" type="AnimationPlayer" parent="UI" unique_id=213901787]
 libraries/ = SubResource("AnimationLibrary_pk4kl")
+
+[node name="temperature" type="Label" parent="UI" unique_id=1750541181]
+offset_left = 503.0
+offset_top = -10.0
+offset_right = 649.0
+offset_bottom = 76.0
+text = "15°C"
+label_settings = SubResource("LabelSettings_bek06")
+
+[node name="black_screen" type="ColorRect" parent="." unique_id=1613360724]
+z_index = 100
+offset_right = 1151.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("4_0oetj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="black_screen" unique_id=2111403842]
+libraries/ = SubResource("AnimationLibrary_bux5w")
 
 [connection signal="pressed" from="pause_handler/Pause Menu/VBoxContainer/resume" to="pause_handler" method="_on_resume_pressed"]
 [connection signal="pressed" from="pause_handler/Pause Menu/VBoxContainer/options" to="pause_handler" method="_on_options_pressed"]
