@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxo6ahfto86yh" path="res://assets/tilesets/stage1-background.png" id="4_qx34v"]
 [ext_resource type="Texture2D" uid="uid://3mevjhxd1f0i" path="res://assets/environment/powerline_pole.png" id="5_a0w7u"]
 [ext_resource type="Texture2D" uid="uid://bcdtip6ntlmne" path="res://assets/environment/powerlines.png" id="5_y4tkw"]
-[ext_resource type="Texture2D" uid="uid://oacoa043jtwe" path="res://assets/ui/tutorial/battery_empty.png" id="11_88nao"]
+[ext_resource type="PackedScene" uid="uid://d2up0jfkmrssw" path="res://scenes/gameplay/misc/battery.tscn" id="6_wvv5l"]
 
 [sub_resource type="FontVariation" id="FontVariation_m8wtx"]
 base_font = ExtResource("1_c1obi")
@@ -25,9 +25,6 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_wvv5l"]
 font_size = 32
 font_color = Color(1, 0.22446936, 0.31925267, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvv5l"]
-size = Vector2(31, 57)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qx34v"]
 texture = ExtResource("2_jda6d")
@@ -220,6 +217,15 @@ frame = 3
 position = Vector2(204, 70)
 texture = ExtResource("4_muou6")
 
+[node name="Arrow2" type="Sprite2D" parent="tutorial labels/hammer movement" unique_id=1348749113]
+position = Vector2(460, -59)
+texture = ExtResource("4_muou6")
+
+[node name="Arrow3" type="Sprite2D" parent="tutorial labels/hammer movement" unique_id=687131474]
+position = Vector2(586, -179)
+texture = ExtResource("4_muou6")
+flip_h = true
+
 [node name="battery insertion" type="Node2D" parent="tutorial labels" unique_id=887041156]
 position = Vector2(-210, -81)
 
@@ -243,10 +249,10 @@ hframes = 8
 frame = 7
 
 [node name="heat warning" type="Node2D" parent="tutorial labels" unique_id=1182036189]
+visible = false
 position = Vector2(-420, -162)
 
 [node name="Label" type="Label" parent="tutorial labels/heat warning" unique_id=1250193389]
-visible = false
 offset_left = -441.0
 offset_top = -123.0
 offset_right = -166.0
@@ -265,17 +271,8 @@ y_sort_enabled = true
 [node name="battery" type="Node2D" parent="y-sort" unique_id=2019681628]
 y_sort_enabled = true
 
-[node name="BatteryEmpty" type="Sprite2D" parent="y-sort/battery" unique_id=1238517433]
+[node name="Battery" parent="y-sort/battery" unique_id=2064062505 instance=ExtResource("6_wvv5l")]
 position = Vector2(-950, -263)
-scale = Vector2(4, 4)
-texture = ExtResource("11_88nao")
-
-[node name="interact range" type="Area2D" parent="y-sort/battery/BatteryEmpty" unique_id=132557957]
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/battery/BatteryEmpty/interact range" unique_id=2017793372]
-shape = SubResource("RectangleShape2D_wvv5l")
 
 [node name="Player" parent="y-sort" unique_id=623290912 instance=ExtResource("2_ad6u8")]
 position = Vector2(24, 44)
