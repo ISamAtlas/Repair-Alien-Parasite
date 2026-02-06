@@ -11,16 +11,20 @@ const hammer: PackedScene = preload("uid://bj58b4m807sxf")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var can_place_battery : bool = false
+
 func _ready() -> void:
 	$BodyShading.frame=0
 	$EmptyBody.frame=0
 	$ParasiteBody.frame=0
 
 func _physics_process(delta: float) -> void:
+	if !Global.is_battery_placed && can_place_battery && Input.is_action_just_pressed("s"):
+		SignalManager.emit_signal("battery_placed")
+	
 	if !is_on_floor():
 		Global.jumped = true
 		velocity += get_gravity() * delta
-
 	# Handle jump.
 	if is_on_floor():
 		if Global.jumped:
@@ -58,3 +62,11 @@ func _on_walk_cycle_timeout() -> void:
 	if !Global.jumped:
 		walk_index *= -1
 		SignalManager.emit_signal("step", walk_index)
+
+
+func _on_battery_place_area_entered(_area: Area2D) -> void:
+	can_place_battery = true
+
+
+func _on_battery_place_area_exited(_area: Area2D) -> void:
+	can_place_battery = false

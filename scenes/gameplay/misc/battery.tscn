@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d2up0jfkmrssw"]
+
+[ext_resource type="Texture2D" uid="uid://oacoa043jtwe" path="res://assets/ui/tutorial/battery_empty.png" id="1_5phqq"]
+[ext_resource type="Script" uid="uid://blanvob0pk80x" path="res://scripts/gameplay/misc/battery.gd" id="2_plvqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvv5l"]
+size = Vector2(31, 57)
+
+[node name="Battery" type="Sprite2D" unique_id=2064062505]
+scale = Vector2(4, 4)
+texture = ExtResource("1_5phqq")
+hframes = 2
+script = ExtResource("2_plvqi")
+
+[node name="interact range" type="Area2D" parent="." unique_id=1449819062]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact range" unique_id=360488873]
+shape = SubResource("RectangleShape2D_wvv5l")

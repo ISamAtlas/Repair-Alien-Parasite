@@ -262,6 +262,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuses"]
+size = Vector2(96, 117)
+
 [node name="Player" type="CharacterBody2D" unique_id=623290912]
 collision_mask = 2
 script = ExtResource("1_rp718")
@@ -282,25 +285,25 @@ zoom = Vector2(1.5, 1.5)
 [node name="left leg" type="Node2D" parent="body/legs" unique_id=1403927414]
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=370476575]
-position = Vector2(-16.161715, -29.167725)
-rotation = 0.15869743
-scale = Vector2(1.9998256, 1.9998256)
+position = Vector2(-15.98505, -29.149563)
+rotation = 0.162221
+scale = Vector2(1.9998355, 1.9998355)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
 
 [node name="thigh" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=613335362]
 position = Vector2(-13, -59)
-rotation = 0.10558326
-scale = Vector2(1.9999964, 1.9999964)
+rotation = 0.09966245
+scale = Vector2(1.999988, 1.999988)
 sprite_frames = SubResource("SpriteFrames_6avc5")
 autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/left leg" unique_id=2050677461]
-position = Vector2(-19.141224, 1.7264881)
+position = Vector2(-19.073414, 1.7341137)
 rotation = 0.004717354
-scale = Vector2(1.9998256, 1.9998256)
+scale = Vector2(1.9998355, 1.9998355)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)
@@ -310,8 +313,8 @@ position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
 position = Vector2(-0.0559268, -32.035522)
-rotation = 0.014397011
-scale = Vector2(1.9998257, 1.9998257)
+rotation = 0.014397048
+scale = Vector2(1.9998274, 1.9998274)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
@@ -325,9 +328,9 @@ autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(1.4381227, -1.0339451)
+position = Vector2(1.4381237, -1.0339184)
 rotation = 0.004717336
-scale = Vector2(1.9998257, 1.9998257)
+scale = Vector2(1.9998274, 1.9998274)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)
@@ -378,8 +381,8 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="shin" type="Bone2D" parent="body/bones/Skeleton2D/right leg" unique_id=804502265]
 position = Vector2(-5.054474e-05, 14.999714)
-rotation = 0.0625562
-scale = Vector2(0.9999178, 0.9999178)
+rotation = 0.06255619
+scale = Vector2(0.99991786, 0.99991786)
 rest = Transform2D(1, 0, 0, 1, 0.5, 14)
 metadata/_local_pose_override_enabled_ = true
 
@@ -469,4 +472,14 @@ frame_progress = 0.21738254
 wait_time = 0.2
 autostart = true
 
+[node name="battery_place" type="Area2D" parent="." unique_id=761690813]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="battery_place" unique_id=510908832]
+position = Vector2(-3, -43)
+shape = SubResource("RectangleShape2D_xuses")
+
 [connection signal="timeout" from="walk_cycle" to="." method="_on_walk_cycle_timeout"]
+[connection signal="area_entered" from="battery_place" to="." method="_on_battery_place_area_entered"]
+[connection signal="area_exited" from="battery_place" to="." method="_on_battery_place_area_exited"]
