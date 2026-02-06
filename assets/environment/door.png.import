@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oacoa043jtwe"
-path="res://.godot/imported/battery.png-5e2efd5212bad4c3d25a2a4612d28901.ctex"
+uid="uid://bgnmj0xm7k7ik"
+path="res://.godot/imported/door.png-bda5b6dd12c3dcd2a541482af3b36e9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/tutorial/battery.png"
-dest_files=["res://.godot/imported/battery.png-5e2efd5212bad4c3d25a2a4612d28901.ctex"]
+source_file="res://assets/environment/door.png"
+dest_files=["res://.godot/imported/door.png-bda5b6dd12c3dcd2a541482af3b36e9c.ctex"]
 
 [params]
 

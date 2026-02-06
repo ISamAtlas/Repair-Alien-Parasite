@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dghfqul7u2i7y" path="res://scripts/ui/pause_menu/main.gd" id="1_sgvfw"]
 [ext_resource type="Script" uid="uid://bvwqx3iuqmbfp" path="res://scripts/ui/options/h_slider.gd" id="2_qtnq8"]
 [ext_resource type="Script" uid="uid://cpl8scy8p2yoa" path="res://scripts/ui/canvas manager/ui.gd" id="3_5c2fl"]
+[ext_resource type="Texture2D" uid="uid://78qdckogm3ip" path="res://assets/ui/HUD/battery_icon.png" id="3_pk4kl"]
 [ext_resource type="Script" uid="uid://cm2q6ufb38u06" path="res://scripts/globals/black_screen.gd" id="4_0oetj"]
 [ext_resource type="FontFile" uid="uid://lkkmatu8d1ns" path="res://assets/fonts/editundo.ttf" id="4_v8xty"]
 
@@ -292,6 +293,11 @@ bus_name = "SFX"
 [node name="resume" type="Button" parent="pause_handler/Options/VBoxContainer" unique_id=226931217]
 layout_mode = 2
 text = "Resume"
+
+[node name="BatteryIcon" type="Sprite2D" parent="." unique_id=512789557]
+position = Vector2(1059, 577)
+scale = Vector2(4, 4)
+texture = ExtResource("3_pk4kl")
 
 [node name="UI" type="Node2D" parent="." unique_id=139384261]
 position = Vector2(0, 700)

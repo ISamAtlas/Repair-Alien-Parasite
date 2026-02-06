@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var battery_icon: Sprite2D = $"../BatteryIcon"
+
 @onready var death_message: Label = $CenterContainer/death_message
 @onready var anim_death: AnimationPlayer = $CenterContainer/anim
 
@@ -17,9 +19,11 @@ func _ready() -> void:
 	SignalManager.connect("battery_placed", _on_battery_placed)
 
 func _on_battery_placed() -> void:
+	battery_icon.visible = false
 	anim.play("progress_bar_init")
 
 func _on_reset() -> void:
+	battery_icon.visible = true
 	increase_temp = false
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:

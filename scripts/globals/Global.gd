@@ -1,7 +1,10 @@
 extends Node
 
 var levels_unlocked :int= 1
-var current_level:Dictionary ={ "number": 1, "path": "res://scenes/gameplay/levels/level 1.tscn" }:
+
+var levels:Dictionary = {"1":"res://scenes/gameplay/levels/level 1.tscn", "2":"res://scenes/gameplay/levels/level 2.tscn"}
+
+var current_level:Dictionary = {"number": 1, "path": "res://scenes/gameplay/levels/level 1.tscn"}:
 	set(value):
 		current_level = value
 		print(value)
@@ -18,7 +21,6 @@ func _ready() -> void:
 	SignalManager.connect("reset",reset)
 
 func reset() -> void:
-	print("howdy")
 	jumped = true
 	get_tree().change_scene_to_file(current_level.path)
 	SignalManager.emit_signal("fade", true)

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://3mevjhxd1f0i" path="res://assets/environment/powerline_pole.png" id="5_a0w7u"]
 [ext_resource type="Texture2D" uid="uid://bcdtip6ntlmne" path="res://assets/environment/powerlines.png" id="5_y4tkw"]
 [ext_resource type="PackedScene" uid="uid://d2up0jfkmrssw" path="res://scenes/gameplay/misc/battery.tscn" id="6_wvv5l"]
+[ext_resource type="PackedScene" uid="uid://biwctxmq0l0he" path="res://scenes/gameplay/misc/door.tscn" id="13_jvo0c"]
 
 [sub_resource type="FontVariation" id="FontVariation_m8wtx"]
 base_font = ExtResource("1_c1obi")
@@ -302,3 +303,6 @@ position = Vector2(89, 18)
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAALAPv/AQACAAAAAAAKAPv/AQACAAAAAAAJAPv/AQACAAAAAAAIAPv/AQACAAAAAAAHAPv/AQACAAAAAAAGAPv/AQACAAAAAAAFAPv/AQACAAAAAAAEAPv/AQACAAAAAAADAPv/AQACAAAAAAACAPv/AQACAAAAAAABAPv/AQACAAAAAAAAAPv/AQACAAAAAAD///v/AQACAAAAAAD+//v/AQACAAAAAAD9//v/AQACAAAAAAD8//v/AQACAAAAAAD7//v/AQACAAAAAAD6//v/AQACAAAAAAD5//v/AQAGAAAAAAD5//z/AgAAAAAAAAANAPv/AQACAAAAAAAMAPv/AQACAAAAAAAOAPv/AQACAAAAAAAPAPv/AQACAAAAAAAQAPv/AQACAAAAAAARAPv/AQACAAAAAAASAPv/AQAAAAAAAAASAPz/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_m8wtx")
+
+[node name="door" parent="y-sort" unique_id=1227340125 instance=ExtResource("13_jvo0c")]
+position = Vector2(1083, -67)
