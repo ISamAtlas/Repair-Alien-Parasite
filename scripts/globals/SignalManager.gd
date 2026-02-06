@@ -1,10 +1,9 @@
 extends Node
 
 #Globals
+signal reset #called by UI in canvas manager, and global too
 	#canvas manager
 signal fade
-signal heat_bar_full
-signal reset #called by UI in canvas manager
 
 #Player
 signal jumped

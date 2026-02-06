@@ -30,12 +30,11 @@ func _physics_process(delta: float) -> void:
 		var display:String = str(round_to_dec(degrees,1), "°C")
 		if degrees <= 75: #solid number until it reaches 85, in which case it shows the decimal place rapidly scaling
 			display = str(int(degrees), "°C")
-		
 		temp.text = display
 
 func _on_progress_bar_value_changed(value: float) -> void:
 	if value == 100:
-		SignalManager.emit_signal("heat_bar_full")
+		SignalManager.emit_signal("reset")
 
 func round_to_dec(num, digit) -> float:
 	return round(num * pow(10.0, digit)) / pow(10.0, digit)
