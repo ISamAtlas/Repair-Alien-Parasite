@@ -276,7 +276,7 @@ y_sort_enabled = true
 position = Vector2(-950, -263)
 
 [node name="Player" parent="y-sort" unique_id=623290912 instance=ExtResource("2_ad6u8")]
-position = Vector2(-798, -216)
+position = Vector2(1160, -263)
 
 [node name="limits" type="TileMapLayer" parent="y-sort" unique_id=962616548]
 y_sort_enabled = true

@@ -300,6 +300,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("3_pk4kl")
 
 [node name="UI" type="Node2D" parent="." unique_id=139384261]
+process_mode = 1
 position = Vector2(0, 700)
 script = ExtResource("3_5c2fl")
 

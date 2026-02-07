@@ -12,6 +12,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var can_place_battery : bool = false
+var can_leave : bool = false
 
 func _ready() -> void:
 	$BodyShading.frame=0
@@ -64,9 +65,17 @@ func _on_walk_cycle_timeout() -> void:
 		SignalManager.emit_signal("step", walk_index)
 
 
-func _on_battery_place_area_entered(_area: Area2D) -> void:
-	can_place_battery = true
+func _on_battery_place_area_entered(area: Area2D) -> void:
+	if get_type(area) == Global.area_type.door:
+		can_leave = true
+	if get_type(area) == Global.area_type.battery:
+		can_place_battery = true
 
+func _on_battery_place_area_exited(area: Area2D) -> void:
+	if get_type(area) == Global.area_type.door:
+		can_leave = false
+	if get_type(area) == Global.area_type.battery:
+		can_place_battery = false
 
-func _on_battery_place_area_exited(_area: Area2D) -> void:
-	can_place_battery = false
+func get_type(area: Area2D):
+	return area.get_parent().type

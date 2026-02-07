@@ -1,5 +1,7 @@
 extends Node
 
+enum area_type{door,battery} 
+
 var levels_unlocked :int= 1
 
 var levels:Dictionary = {"1":"res://scenes/gameplay/levels/level 1.tscn", "2":"res://scenes/gameplay/levels/level 2.tscn"}

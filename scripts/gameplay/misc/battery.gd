@@ -1,5 +1,6 @@
 extends Sprite2D
 
+var type:Global.area_type = Global.area_type.battery
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
