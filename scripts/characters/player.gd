@@ -7,6 +7,7 @@ const hammer: PackedScene = preload("uid://bj58b4m807sxf")
 @export var tool:tools
 @onready var walk_index:int= 1
 @onready var legs :Node2D = $body/legs
+var next_level:String
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -24,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		if !Global.is_battery_placed && can_place_battery:
 			SignalManager.emit_signal("battery_placed")
 		elif can_leave:
-			Global.leave()
+			Global.leave(next_level)
 	
 	if !is_on_floor():
 		Global.jumped = true
@@ -71,6 +72,7 @@ func _on_walk_cycle_timeout() -> void:
 func _on_battery_place_area_entered(area: Area2D) -> void:
 	if get_type(area) == Global.area_type.door:
 		can_leave = true
+		next_level = area.get_parent().next_scene
 	if get_type(area) == Global.area_type.battery:
 		can_place_battery = true
 

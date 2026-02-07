@@ -313,8 +313,8 @@ position = Vector2(7.5, 0)
 
 [node name="shin" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1217307789]
 position = Vector2(-0.0559268, -32.035522)
-rotation = 0.014397003
-scale = Vector2(1.999826, 1.999826)
+rotation = 0.014397048
+scale = Vector2(1.9998274, 1.9998274)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 autoplay = "default"
 offset = Vector2(0.5, 0)
@@ -328,9 +328,9 @@ autoplay = "default"
 offset = Vector2(-0.5, -4)
 
 [node name="foot" type="AnimatedSprite2D" parent="body/legs/right leg" unique_id=1688032002]
-position = Vector2(1.4381237, -1.0339413)
+position = Vector2(1.4381237, -1.0339184)
 rotation = 0.004717336
-scale = Vector2(1.999826, 1.999826)
+scale = Vector2(1.9998274, 1.9998274)
 sprite_frames = SubResource("SpriteFrames_qd3e3")
 autoplay = "default"
 offset = Vector2(1, -10)
@@ -381,8 +381,8 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="shin" type="Bone2D" parent="body/bones/Skeleton2D/right leg" unique_id=804502265]
 position = Vector2(-5.054474e-05, 14.999714)
-rotation = 0.06255619
-scale = Vector2(0.9999179, 0.9999179)
+rotation = 0.062556185
+scale = Vector2(0.999918, 0.999918)
 rest = Transform2D(1, 0, 0, 1, 0.5, 14)
 metadata/_local_pose_override_enabled_ = true
 

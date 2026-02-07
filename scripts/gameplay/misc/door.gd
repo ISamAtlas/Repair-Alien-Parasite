@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var next_scene:String
+
 @onready var area: Area2D = $Area2D
 var type:Global.area_type = Global.area_type.door
 
