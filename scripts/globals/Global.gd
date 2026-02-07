@@ -19,6 +19,9 @@ var jumped: bool = true:
 
 var is_battery_placed :bool= false ##set to false at the start of every level
 
+func leave() -> void:
+	print("leaving timer, lets use leave logic! :3")
+
 func _ready() -> void:
 	SignalManager.connect("reset",reset)
 

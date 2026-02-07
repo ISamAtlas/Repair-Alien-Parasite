@@ -20,8 +20,11 @@ func _ready() -> void:
 	$ParasiteBody.frame=0
 
 func _physics_process(delta: float) -> void:
-	if !Global.is_battery_placed && can_place_battery && Input.is_action_just_pressed("s"):
-		SignalManager.emit_signal("battery_placed")
+	if Input.is_action_just_pressed("s"):
+		if !Global.is_battery_placed && can_place_battery:
+			SignalManager.emit_signal("battery_placed")
+		elif can_leave:
+			Global.leave()
 	
 	if !is_on_floor():
 		Global.jumped = true
