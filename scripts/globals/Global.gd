@@ -20,15 +20,16 @@ var jumped: bool = true:
 var is_battery_placed :bool= false ##set to false at the start of every level
 
 func leave(next_level:String) -> void:
+	SignalManager.emit_signal("reset")
+	reset(true)
 	get_tree().change_scene_to_file(next_level)
 
-func _ready() -> void:
-	SignalManager.connect("reset",reset)
-
-func reset() -> void:
+func reset(next:bool) -> void:
+	print("reset")
 	jumped = true
-	get_tree().change_scene_to_file(current_level.path)
 	SignalManager.emit_signal("fade", true)
+	if !next:
+		get_tree().change_scene_to_file(current_level.path)
 
 func intToBool(number:int) -> bool:
 	var value: bool = true

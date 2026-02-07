@@ -23,6 +23,7 @@ func _on_battery_placed() -> void:
 	anim.play("progress_bar_init")
 
 func _on_reset() -> void:
+	print("yerd")
 	battery_icon.visible = true
 	increase_temp = false
 
