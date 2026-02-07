@@ -325,6 +325,7 @@ text = "15°C"
 label_settings = SubResource("LabelSettings_bek06")
 
 [node name="CenterContainer" type="CenterContainer" parent="UI" unique_id=1743106214]
+visible = false
 offset_left = -43.0
 offset_top = -700.0
 offset_right = 1109.0

@@ -242,7 +242,7 @@ label_settings = SubResource("LabelSettings_88nao")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IDK THE KEY YET" type="Sprite2D" parent="tutorial labels/battery insertion" unique_id=70237518]
+[node name="S" type="Sprite2D" parent="tutorial labels/battery insertion" unique_id=70237518]
 position = Vector2(-522, -149)
 scale = Vector2(4, 4)
 texture = ExtResource("2_m8wtx")
@@ -254,17 +254,26 @@ visible = false
 position = Vector2(-420, -162)
 
 [node name="Label" type="Label" parent="tutorial labels/heat warning" unique_id=1250193389]
-offset_left = -441.0
-offset_top = -123.0
-offset_right = -166.0
-offset_bottom = -31.0
+offset_left = -432.0
+offset_top = -198.0
+offset_right = -157.0
+offset_bottom = -42.66667
 theme_override_fonts/font = SubResource("FontVariation_m8wtx")
 text = "But be careful!
 It can get pretty
-dangerous after"
+dangerous after.
+Find the Exit and
+Press "
 label_settings = SubResource("LabelSettings_wvv5l")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="S" type="Sprite2D" parent="tutorial labels/heat warning" unique_id=893013937]
+position = Vector2(-302, -10)
+scale = Vector2(4, 4)
+texture = ExtResource("2_m8wtx")
+hframes = 8
+frame = 7
 
 [node name="y-sort" type="Node2D" parent="." unique_id=230068205]
 y_sort_enabled = true
@@ -276,7 +285,7 @@ y_sort_enabled = true
 position = Vector2(-950, -263)
 
 [node name="Player" parent="y-sort" unique_id=623290912 instance=ExtResource("2_ad6u8")]
-position = Vector2(1160, -263)
+position = Vector2(43, 85)
 
 [node name="limits" type="TileMapLayer" parent="y-sort" unique_id=962616548]
 y_sort_enabled = true
@@ -306,4 +315,3 @@ tile_set = SubResource("TileSet_m8wtx")
 
 [node name="door" parent="y-sort" unique_id=1227340125 instance=ExtResource("13_jvo0c")]
 position = Vector2(1083, -67)
-next_scene = "res://scenes/gameplay/levels/level 2.tscn"
