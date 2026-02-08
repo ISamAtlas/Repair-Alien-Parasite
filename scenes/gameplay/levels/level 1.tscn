@@ -314,5 +314,5 @@ tile_map_data = PackedByteArray("AAALAPv/AQACAAAAAAAKAPv/AQACAAAAAAAJAPv/AQACAAA
 tile_set = SubResource("TileSet_m8wtx")
 
 [node name="door" parent="y-sort" unique_id=1227340125 instance=ExtResource("13_jvo0c")]
-position = Vector2(1083, -67)
+position = Vector2(1085, -143)
 next_scene = "res://scenes/gameplay/levels/level 2.tscn"

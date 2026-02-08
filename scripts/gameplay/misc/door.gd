@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var next_scene:String
+@onready var door: Sprite2D = $Door
 
 @onready var area: Area2D = $Area2D
 var type:Global.area_type = Global.area_type.door
@@ -10,4 +11,5 @@ func _ready() -> void:
 	SignalManager.connect("battery_placed", _on_battery_placed)
 
 func _on_battery_placed() -> void:
+	door.frame = 1
 	area.process_mode = Node.PROCESS_MODE_PAUSABLE
