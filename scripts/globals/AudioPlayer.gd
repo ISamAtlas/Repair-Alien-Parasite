@@ -1,11 +1,14 @@
 extends Node
 
-@onready var test: AudioStreamPlayer2D = $SFX/AudioStreamPlayer2D
+@onready var ambient: AudioStreamPlayer2D = $music/ambient
+@onready var battery: AudioStreamPlayer2D = $SFX/battery
+@onready var step: AudioStreamPlayer2D = $SFX/step
+
 
 func volume_gauger(value: String) -> void:
 	## remove later, just wanted to see the sound working for all the audio bus'
-	test.set_bus(value) 
-	test.play()
+	ambient.set_bus(value) 
+	ambient.play()
 	match value:
 		"SFX":
 			pass

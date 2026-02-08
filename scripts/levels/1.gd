@@ -11,3 +11,4 @@ func _ready() -> void:
 func _on_battery_placed() -> void:
 	battery_insertion.visible = false
 	heat_warning.visible = true
+	AudioManager.battery.play()

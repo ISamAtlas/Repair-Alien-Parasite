@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func _on_stepped(index) -> void:
 	if index == walk_index:
+
 		move = true
 	else:
 		move = false
@@ -22,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		if move:
 			if abs(global_position.x - target.global_position.x) > distance_threshold:
 				target.global_position = global_position
+				AudioManager.step.play()
 	var direction := Input.get_axis("left","right")
 	if direction!= 0:
 		target.global_position.x += direction *-1 * range * delta

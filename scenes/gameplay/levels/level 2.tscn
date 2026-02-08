@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://66y2xm0vtwhh"]
 
 [node name="Level2" type="Node2D" unique_id=1331220256]
+
+[node name="Label" type="Label" parent="." unique_id=1748059647]
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 340.0
+offset_bottom = 63.0
+text = "wow good job, you won!!!!!!!!
+(I could only manage a tutorial level)"
