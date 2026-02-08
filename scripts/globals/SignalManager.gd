@@ -8,6 +8,7 @@ signal fade
 #Player
 signal jumped
 signal step
+signal shake
 
 #level
 signal battery_placed
