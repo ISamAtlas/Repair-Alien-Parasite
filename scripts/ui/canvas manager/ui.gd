@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 func _on_progress_bar_value_changed(value: float) -> void:
 	if value >= 100:
 		SignalManager.emit_signal("reset")
-		
+		get_tree().change_scene_to_file("res://scenes/gameplay/levels/level 1.tscn")
 		var new_display:String = str(int(init_temp), "°C")
 		bar.value = 0
 		temp.text = new_display
